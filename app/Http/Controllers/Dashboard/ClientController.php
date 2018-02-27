@@ -4,22 +4,22 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-//use App\Model\Cliente;
+use App\Model\Client;
 
 class ClientController extends Controller
 {
 
-/*    private $client;
+    private $client;
 
     public function __construct(Client $cli)
     {
       $this->client = $cli;
     }
-*/
+
     public function index()
     {
-      //  $clientlist = $this->client->getClienteAll();
-        echo phpinfo();
+        $clientlist = $this->client->getClientAll();
+        return view('dashboard.client.clientlist',['client' => $clientlist]);
     }
 
     public function create()

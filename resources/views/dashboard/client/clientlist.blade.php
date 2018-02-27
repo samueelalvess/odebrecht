@@ -11,11 +11,13 @@
     <th></th>
   </thead>
   <tbody>
+    @foreach($client as $clients)
     <tr>
       <td>13213123</td>
-      <td>Samuel Alves da Silva</td>
+      <td>{{$clients->a03_002_c}}</td>
       <td><button class="btn btn-info">Selecionar</button></td>
     </tr>
+    @endforeach
   </tbody>
 </table>
 
