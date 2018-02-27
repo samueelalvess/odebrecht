@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('dashboard.base');
 });
+
+Route::prefix('/client')->group(function () {
+
+    Route::get('/clientes', 'Dashboard\ClientController@index')->name('clientList');
+
+});

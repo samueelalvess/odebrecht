@@ -27,10 +27,10 @@
         <h3>Menu</h3>
         <ul class="nav side-menu">
           <li><a href=""><i class="fa fa-home"></i> Inicial </a></li>
-          <li><a href="aa"><i class="fa fa-users"></i> Clientes </a></li>
+          <li><a href="{{route('clientList')}}"><i class="fa fa-users"></i> Clientes </a></li>
           <li><a href="a"><i class="fa fa-male"></i> Vendedores </a></li>
           <li><a href="b"><i class="fa fa-coffee"></i> Produtos </a></li>
-          <li><a><i class="fa fa-users"></i> Pedidos <span class="fa fa-chevron-down"></span></a>
+          <li><a><i class="fa fa-shopping-cart"></i> Pedidos <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
               <li><a href="c">Novo Pedido</a></li>
               <li><a href="d">Teste</a></li>
