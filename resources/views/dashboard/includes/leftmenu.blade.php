@@ -9,7 +9,7 @@
     <!-- menu profile quick info -->
     <div class="profile clearfix">
       <div class="profile_pic">
-        <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+        <img src="{{ asset('dashboard/assets/img/img.jpg') }}" alt="..." class="img-circle profile_img">
       </div>
       <div class="profile_info">
         <span>Bem-vindo,</span>
@@ -43,6 +43,7 @@
         <h3>Perfil</h3>
         <ul class="nav side-menu">
           <li><a href="f"><i class="fa fa-user"></i> Meu Perfil </a></li>
+          <li><a href="f"><i class="fa fa-cogs"></i> Configurações </a></li>
         </ul>
       </div>
 
@@ -52,7 +53,7 @@
     <!-- /menu footer buttons -->
     <div class="sidebar-footer hidden-small">
       <a data-toggle="tooltip" data-placement="top" title="Sair" href="login.html">
-        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+        <span class="fa fa-power-off" aria-hidden="true"></span>
       </a>
     </div>
     <!-- /menu footer buttons -->
