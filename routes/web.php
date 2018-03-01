@@ -21,6 +21,22 @@ Route::prefix('/client')->group(function () {
 
 });
 
+Route::prefix('/seller')->group(function () {
+
 Route::get('/vendedores', function () {
     return view('dashboard.seller.sellerlist');
 })->name('sellerList');
+
+Route::get('/novovendedor', function () {
+    return view('dashboard.seller.seller');
+})->name('sellernew');
+
+});
+
+Route::prefix('/product')->group(function () {
+
+Route::get('/produtos', function () {
+    return view('dashboard.product.productlist');
+})->name('productList');
+
+});
