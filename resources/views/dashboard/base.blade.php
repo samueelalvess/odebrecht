@@ -41,6 +41,7 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>@yield('title')</h2>
+                    @yield('btn')
                     <div class="clearfix"></div>
                   </div>
 

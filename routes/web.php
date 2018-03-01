@@ -20,3 +20,7 @@ Route::prefix('/client')->group(function () {
     Route::get('/clientes', 'Dashboard\ClientController@index')->name('clientList');
 
 });
+
+Route::get('/vendedores', function () {
+    return view('dashboard.seller.sellerlist');
+})->name('sellerList');

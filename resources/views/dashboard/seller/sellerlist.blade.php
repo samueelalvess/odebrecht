@@ -7,26 +7,31 @@
 
 @section('title', 'Vendedores')
 
-@section('content')
+@section('btn')
+<a href=""><button class="btn btn-success pull-right"><i class="fa fa-plus"></i> Novo Vendedor</button></a>
+@endsection
 
-<table class="table table-responsive table-striped table-hover" id="clientList">
+@section('content')
+<table class="table table-responsive table-striped table-hover" id="sellerList">
   <thead>
-    <th>Documento</th>
     <th>Nome</th>
-    <th>E-mail</th>
+    <th>CPF</th>
     <th>Telefone</th>
+    <th>E-mail</th>
+    <th>Cidade</th>
     <th class="col-md-1"></th>
   </thead>
   <tbody>
 
     <tr>
-      <td>13213123</td>
-      <td>{{$clients->a03_002_c}}</td>
-      <td>teste@teste.com</td>
+      <td>Samuel Alves</td>
+      <td>08779560903</td>
       <td>(43) 3324-0698</td>
-      <td><button class="btn btn-info"><i class="fa fa-eye"></i> Visualizar</button></td>
+      <td>teste@teste.com</td>
+      <td>Londrina</td>
+      <td><button class="btn btn-warning"><i class="fa fa-pencil"></i> Editar</button></td>
     </tr>
-    @endforeach
+
   </tbody>
 </table>
 
