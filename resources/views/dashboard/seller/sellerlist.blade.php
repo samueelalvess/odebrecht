@@ -5,7 +5,7 @@
 @parent
 @stop
 
-@section('title', 'Clientes')
+@section('title', 'Vendedores')
 
 @section('content')
 
@@ -18,7 +18,7 @@
     <th class="col-md-1"></th>
   </thead>
   <tbody>
-    @foreach($client as $clients)
+
     <tr>
       <td>13213123</td>
       <td>{{$clients->a03_002_c}}</td>
@@ -36,6 +36,6 @@
 <script src="{{ asset('dashboard/assets/js/lib/data-table/datatables.min.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/lib/data-table/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/lib/data-table/datatables-init.js') }}"></script>
-<script src="{{ asset('dashboard/assets/js/client/client.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/seller/seller.js') }}"></script>
 @parent
 @stop

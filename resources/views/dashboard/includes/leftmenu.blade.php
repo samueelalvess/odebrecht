@@ -26,7 +26,7 @@
       <div class="menu_section">
         <h3>Menu</h3>
         <ul class="nav side-menu">
-          <li><a href=""><i class="fa fa-home"></i> Inicial </a></li>
+          <li><a href="{{route('home')}}"><i class="fa fa-home"></i> Inicial </a></li>
           <li><a href="{{route('clientList')}}"><i class="fa fa-users"></i> Clientes </a></li>
           <li><a href="a"><i class="fa fa-male"></i> Vendedores </a></li>
           <li><a href="b"><i class="fa fa-coffee"></i> Produtos </a></li>

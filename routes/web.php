@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('dashboard.base');
-});
+})->name('home');
 
 Route::prefix('/client')->group(function () {
 

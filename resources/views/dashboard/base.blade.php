@@ -10,6 +10,7 @@
     <link href="{{ asset('dashboard/assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dashboard/assets/css/custom.min.css') }}" rel="stylesheet">
+    @yield('css')
     <!--  -->
   </head>
 
@@ -50,7 +51,7 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
 
@@ -66,6 +67,7 @@
     <script src="{{ asset('dashboard/assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('dashboard/assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('dashboard/assets/js/custom.min.js') }}"></script>
+    @yield('javascript')
     <!--  -->
   </body>
 </html>
