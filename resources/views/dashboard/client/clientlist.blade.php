@@ -28,10 +28,10 @@
           <tbody>
             @foreach($client as $clients)
             <tr>
-              <td>13213123</td>
-              <td>{{$clients->a03_002_c}}</td>
-              <td>teste@teste.com</td>
-              <td>(43) 3324-0698</td>
+              <td>{{$clients->A03_009_C}}</td>
+              <td>{{$clients->A03_002_C}}</td>
+              <td>{{$clients->A03_017_C}}</td>
+              <td>{{$clients->A03_012_C}}</td>
               <td><button class="btn btn-info"><i class="fa fa-eye"></i> Visualizar</button></td>
             </tr>
             @endforeach

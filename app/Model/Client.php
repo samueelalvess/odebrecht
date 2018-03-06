@@ -11,6 +11,6 @@ class Client extends Model
 
     public function getClientAll()
     {
-      return $this->limit(5)->get();
+      return $this->select('A03_002_C','A03_003_C','A03_017_C','A03_012_C','A03_009_C')->limit(5)->get();
     }
 }
