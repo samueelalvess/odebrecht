@@ -17,7 +17,9 @@ class SellerController extends Controller
 
     public function index()
     {
-        //return $teste;
+        $sellers = $this->seller->getSellerAll();
+
+        return view('',['seller' => $sellers]);
     }
 
     public function create()

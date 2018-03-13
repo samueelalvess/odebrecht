@@ -10,7 +10,10 @@ class Seller extends Model
 
   public function getSellerAll()
   {
-    return $this->all();
+    $data = $this->select('A33_001_C','A33_002_C','A33_003_C','A33_010_C','A33_012_C','A33_024_C','ARRAY_009')
+                 ->where('ARRAY_003','1')
+                 ->get();
+    return $data;
   }
   public function getSellerId($id)
   {
