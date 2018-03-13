@@ -13,7 +13,7 @@
     <div class="x_panel">
       <div class="x_title">
         <h2>Vendedores</h2>
-        
+
         <div class="clearfix"></div>
       </div>
 
@@ -33,8 +33,8 @@
               <td>{{$sellers -> A33_003_C}}</td>
               <td>{{$sellers -> A33_010_C}}</td>
               <td>{{$sellers -> A33_012_C}}</td>
-              <td>{{$sellers -> A33_24_C}}</td>
-              <td></td>
+              <td>{{$sellers -> A33_024_C}}</td>
+              <td>{{$sellers->A24_001_C}}</td>
               <td><button class="btn btn-sm btn-warning"><i class="fa fa-eye"></i> </button></td>
             </tr>
             @endforeach
