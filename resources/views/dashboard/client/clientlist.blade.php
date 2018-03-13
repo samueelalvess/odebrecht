@@ -32,7 +32,7 @@
               <td>{{$clients->A03_002_C}}</td>
               <td>{{$clients->A03_017_C}}</td>
               <td>{{$clients->A03_012_C}}</td>
-              <td><button class="btn btn-info"><i class="fa fa-eye"></i> Visualizar</button></td>
+              <td><button class="btn btn-sm btn-info"><i class="fa fa-eye"></i> </button></td>
             </tr>
             @endforeach
           </tbody>

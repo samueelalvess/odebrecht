@@ -2,6 +2,7 @@
 $(document).ready(function() {
 
   $('#clientList').DataTable( {
+
     "language":
     {
     "sEmptyTable": "Nenhum registro encontrado",

@@ -19,7 +19,7 @@ class SellerController extends Controller
     {
         $sellers = $this->seller->getSellerAll();
 
-        return view('',['seller' => $sellers]);
+        return view('dashboard.seller.sellerlist',['seller' => $sellers]);
     }
 
     public function create()

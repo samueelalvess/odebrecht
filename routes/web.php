@@ -17,17 +17,17 @@ Route::get('/', function () {
 
 Route::prefix('/client')->group(function () {
 
-    Route::get('/clientes', 'Dashboard\ClientController@index')->name('clientList');
+    Route::get('/lista', 'Dashboard\ClientController@index')->name('clientList');
+
+    Route::get('/dadoscliente', 'Dashboard\ClientController@index')->name('clientData');
 
 });
 
-Route::prefix('/seller')->group(function () {
+Route::prefix('/vendedores')->group(function () {
 
-Route::get('/vendedores', function () {
-    return view('dashboard.seller.sellerlist');
-})->name('sellerList');
+Route::get('/lista', 'Dashboard\SellerController@index')->name('sellerList');
 
-Route::get('/novovendedor', function () {
+Route::get('/dadosvendedor', function () {
     return view('dashboard.seller.seller');
 })->name('sellernew');
 
