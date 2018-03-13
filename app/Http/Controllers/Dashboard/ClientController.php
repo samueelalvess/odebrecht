@@ -39,7 +39,8 @@ class ClientController extends Controller
 
     public function edit($id)
     {
-        //
+      $client_id = $this->client->getClientId($id);
+      return view('',['client' => $client_id]);
     }
 
     public function update(Request $request, $id)
