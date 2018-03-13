@@ -13,7 +13,7 @@
     <div class="x_panel">
       <div class="x_title">
         <h2>Vendedores</h2>
-        <a href="{{route('sellernew')}}"><button class="btn btn-success pull-right"><i class="fa fa-plus"></i> Novo Vendedor</button></a>
+        
         <div class="clearfix"></div>
       </div>
 
@@ -28,15 +28,16 @@
             <th class="col-md-1"></th>
           </thead>
           <tbody>
-
+            @foreach($seller as $sellers )
             <tr>
-              <td>Samuel Alves</td>
-              <td>08779560903</td>
-              <td>(43) 3324-0698</td>
-              <td>teste@teste.com</td>
-              <td>Londrina</td>
-              <td><button class="btn btn-warning"><i class="fa fa-pencil"></i> Editar</button></td>
+              <td>{{$sellers -> A33_003_C}}</td>
+              <td>{{$sellers -> A33_010_C}}</td>
+              <td>{{$sellers -> A33_012_C}}</td>
+              <td>{{$sellers -> A33_24_C}}</td>
+              <td></td>
+              <td><button class="btn btn-sm btn-warning"><i class="fa fa-eye"></i> </button></td>
             </tr>
+            @endforeach
 
           </tbody>
         </table>
