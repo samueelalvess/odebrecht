@@ -27,9 +27,7 @@ Route::prefix('/vendedores')->group(function () {
 
     Route::get('/lista', 'Dashboard\SellerController@index')->name('sellerList');
 
-    Route::get('/dadosvendedor', function () {
-        return view('dashboard.seller.seller');
-    })->name('sellernew');
+    Route::get('/{id}/dadosvendedor','Dashboard\SellerController@edit')->name('sellerData');
 
 });
 
