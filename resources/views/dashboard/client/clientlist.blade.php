@@ -33,7 +33,7 @@
               <td>{{$clients->A03_002_C}}</td>
               <td>{{$clients->A03_017_C}}</td>
               <td>{{$clients->A03_012_C}}</td>
-              <td>{{$clients->A24_UKEY}}</td>
+              <td>{{$clients->A24_001_C}}</td>
               <td><a href="{{route('clientData',['id'=>$clients->A03_001_C])}}"><button class="btn btn-sm btn-warning"><i class="fa fa-eye"></i> </button></a></td>
             </tr>
             @endforeach
