@@ -34,8 +34,13 @@
               <td>{{$sellers -> A33_003_C}}</td>
               <td>{{$sellers -> A33_012_C}}</td>
               <td>{{$sellers -> A33_024_C}}</td>
+<<<<<<< HEAD
               <td>{{$sellers -> A24_001_C}}</td>
               <td><a href="{{ route('seller', ['id' => $clients->A03_001_C]) }}"><button class="btn btn-sm btn-warning"><i class="fa fa-eye"></i> </button></a></td>
+=======
+              <td>{{$sellers->A24_001_C}}</td>
+              <td><button class="btn btn-sm btn-warning"><i class="fa fa-eye"></i> </button></td>
+>>>>>>> a44e7c74bd968a3dd89b6742dcba1eade6e24cd4
             </tr>
             @endforeach
 
