@@ -24,7 +24,7 @@
             <th>E-mail</th>
             <th>Telefone</th>
             <th>Cidade</th>
-            <th class="col-md-1"></th>
+            <th class="col-md-2 text-center"><i class="fa fa-cogs"></i></th>
           </thead>
           <tbody>
             @foreach($client as $clients)
@@ -34,7 +34,10 @@
               <td>{{$clients->A03_017_C}}</td>
               <td>{{$clients->A03_012_C}}</td>
               <td>{{$clients->A24_001_C}}</td>
-              <td><a href="{{route('clientData',['id'=>$clients->A03_001_C])}}"><button class="btn btn-sm btn-warning"><i class="fa fa-eye"></i> </button></a></td>
+              <td align="center">
+                <a href="{{route('clientData',['id'=>$clients->A03_001_C])}}"><button class="btn btn-sm btn-warning" style="border-radius:0px"><i class="fa fa-eye"></i> </button></a>
+                <a><button class="btn btn-sm btn-success" style="border-radius:0px"><i class="fa fa-plus"></i><i class="fa fa-shopping-cart"></i> </button></a>
+              </td>
             </tr>
             @endforeach
           </tbody>
