@@ -23,15 +23,21 @@
         @endif
           {{ csrf_field() }}
 
-        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+        <div class="col-md-5 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Nome Fantasia</label>
-          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A33_002_C}}@endif" placeholder="Nome Fantasia">
+          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A03_002_C}}@endif" placeholder="Nome Fantasia">
+          <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+        </div>
+
+        <div class="col-md-5 col-sm-6 col-xs-12 form-group has-feedback">
+          <label>Razão Social</label>
+          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A03_003_C}}@endif" placeholder="Razão Social">
           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
         </div>
 
         <div class="col-md-2 col-sm-12 col-xs-12 form-group">
           <label>Documento</label>
-          <input type="text" class="form-control" readonly value="@if(!empty($client)){{$client[0]->A33_010_C}}@endif" placeholder="Documento">
+          <input type="text" class="form-control" readonly value="@if(!empty($client)){{$client[0]->A03_009_C}}@endif" placeholder="Documento">
         </div>
 
         <div class="x_title">
@@ -41,19 +47,19 @@
 
         <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Endereço</label>
-          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A33_005_C}}@endif" placeholder="Endereço">
+          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A03_005_C}}@endif" placeholder="Endereço">
           <span class="fa fa-map-pin form-control-feedback left" aria-hidden="true"></span>
         </div>
 
         <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Bairro</label>
-          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A33_004_C}}@endif" placeholder="Bairro">
+          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A03_004_C}}@endif" placeholder="Bairro">
           <span class="fa fa-map-pin form-control-feedback left" aria-hidden="true"></span>
         </div>
 
         <div class="col-md-2 col-sm-6 col-xs-12 form-group has-feedback">
           <label>CEP</label>
-          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A33_006_C}}@endif" placeholder="CEP">
+          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A03_006_C}}@endif" placeholder="CEP">
           <span class="fa fa-map-pin form-control-feedback left" aria-hidden="true"></span>
         </div>
 
@@ -69,19 +75,19 @@
 
         <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Telefone</label>
-          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A33_012_C}}@endif" placeholder="Telefone">
+          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A03_012_C}}@endif" placeholder="Telefone">
           <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
         </div>
 
         <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Celular</label>
-          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A33_014_C}}@endif" placeholder="Celular">
+          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A03_014_C}}@endif" placeholder="Celular">
           <span class="fa fa-mobile form-control-feedback left" aria-hidden="true"></span>
         </div>
 
         <div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">
           <label>E-mail</label>
-          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A33_024_C}}@endif" placeholder="E-mail">
+          <input type="text" class="form-control has-feedback-left" readonly value="@if(!empty($client)){{$client[0]->A03_017_C}}@endif" placeholder="E-mail">
           <span class="fa fa-at form-control-feedback left" aria-hidden="true"></span>
         </div>
 
