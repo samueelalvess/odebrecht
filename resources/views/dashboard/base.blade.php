@@ -27,7 +27,7 @@
         <!-- ***************************** -->
 
 
-        <div class="direita_col" role="main">
+        <div class="direita_col" role="main" style="min-height:800px">
           <div class="">
             <div class="page-title">
               <div class="title_left">

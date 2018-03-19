@@ -40,7 +40,7 @@ class ClientController extends Controller
     public function edit($id)
     {
       $client_id = $this->client->getClientId($id);
-      return view('dashboard.client.client',['client' => $client_id]);
+      return view('dashboard.client.client',['client'=>$client_id]);
     }
 
     public function update(Request $request, $id)

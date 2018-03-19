@@ -13,15 +13,15 @@
     <div class="x_panel">
       <div class="x_title">
         <h2>Vendedores</h2>
-        
+
         <div class="clearfix"></div>
       </div>
 
       <div class="x_content">
         <table class="table table-responsive table-striped table-hover" id="sellerList">
           <thead>
+            <th>Documento</th>
             <th>Nome</th>
-            <th>CPF</th>
             <th>Telefone</th>
             <th>E-mail</th>
             <th>Cidade</th>
@@ -30,12 +30,12 @@
           <tbody>
             @foreach($seller as $sellers )
             <tr>
-              <td>{{$sellers -> A33_003_C}}</td>
               <td>{{$sellers -> A33_010_C}}</td>
+              <td>{{$sellers -> A33_003_C}}</td>
               <td>{{$sellers -> A33_012_C}}</td>
-              <td>{{$sellers -> A33_24_C}}</td>
-              <td></td>
-              <td><button class="btn btn-sm btn-warning"><i class="fa fa-eye"></i> </button></td>
+              <td>{{$sellers -> A33_024_C}}</td>
+              <td>{{$sellers -> A24_001_C}}</td>
+              <td><a href="{{ route('seller', ['id' => $clients->A03_001_C]) }}"><button class="btn btn-sm btn-warning"><i class="fa fa-eye"></i> </button></a></td>
             </tr>
             @endforeach
 

@@ -24,7 +24,7 @@
           {{ csrf_field() }}
 
         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-          <input type="text" class="form-control has-feedback-left" placeholder="Nome">
+          <input type="text" class="form-control has-feedback-left" value="@if(!empty($client)){{$client[0]->A03_001_C}}@endif" placeholder="Nome">
           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
         </div>
 

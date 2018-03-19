@@ -19,17 +19,17 @@ Route::prefix('/client')->group(function () {
 
     Route::get('/lista', 'Dashboard\ClientController@index')->name('clientList');
 
-    Route::get('/dadoscliente', 'Dashboard\ClientController@index')->name('clientData');
+    Route::get('/{id}/dadoscliente','Dashboard\ClientController@edit')->name('clientData');
 
 });
 
 Route::prefix('/vendedores')->group(function () {
 
-Route::get('/lista', 'Dashboard\SellerController@index')->name('sellerList');
+    Route::get('/lista', 'Dashboard\SellerController@index')->name('sellerList');
 
-Route::get('/dadosvendedor', function () {
-    return view('dashboard.seller.seller');
-})->name('sellernew');
+    Route::get('/dadosvendedor', function () {
+        return view('dashboard.seller.seller');
+    })->name('sellernew');
 
 });
 

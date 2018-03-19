@@ -23,6 +23,7 @@
             <th>Nome</th>
             <th>E-mail</th>
             <th>Telefone</th>
+            <th>Cidade</th>
             <th class="col-md-1"></th>
           </thead>
           <tbody>
@@ -32,7 +33,8 @@
               <td>{{$clients->A03_002_C}}</td>
               <td>{{$clients->A03_017_C}}</td>
               <td>{{$clients->A03_012_C}}</td>
-              <td><button class="btn btn-sm btn-info"><i class="fa fa-eye"></i> </button></td>
+              <td>{{$clients->A24_UKEY}}</td>
+              <td><a href="{{route('clientData',['id'=>$clients->A03_001_C])}}"><button class="btn btn-sm btn-warning"><i class="fa fa-eye"></i> </button></a></td>
             </tr>
             @endforeach
           </tbody>
