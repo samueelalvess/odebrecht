@@ -96,7 +96,7 @@
         <div class="ln_solid"></div>
         <div class="form-group">
           <div class="col-md-12">
-            <button type="button" class="btn btn-info"><i class="fa fa-arrow-left"></i> Voltar</button>
+            <a href="{{ URL::previous() }}"><button type="button" class="btn btn-info"><i class="fa fa-arrow-left"></i> Voltar</button></a>
           </div>
         </div>
       </form>

@@ -35,8 +35,8 @@
               <td>{{$clients->A03_012_C}}</td>
               <td>{{$clients->A24_001_C}}</td>
               <td align="center">
-                <a href="{{route('clientData',['id'=>$clients->A03_001_C])}}"><button class="btn btn-sm btn-warning" style="border-radius:0px"><i class="fa fa-eye"></i> </button></a>
-                <a><button class="btn btn-sm btn-success" style="border-radius:0px"><i class="fa fa-plus"></i><i class="fa fa-shopping-cart"></i> </button></a>
+                <a href="{{route('clientData',['id'=>$clients->A03_001_C])}}"><button class="btn btn-xs btn-warning" style="border-radius:0px"><i class="fa fa-eye"></i> </button></a>
+                <a><button class="btn btn-xs btn-success" style="border-radius:0px"><i class="fa fa-plus"></i><i class="fa fa-shopping-cart"></i> </button></a>
               </td>
             </tr>
             @endforeach
