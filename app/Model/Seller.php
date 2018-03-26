@@ -18,7 +18,9 @@ class Seller extends Model
   }
   public function getSellerId($id)
   {
-    return $this->find($id);
+    return $this->select()
+                ->where('A33_001_C',$id)
+                ->get();
   }
 
 }
