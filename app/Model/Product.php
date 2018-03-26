@@ -10,7 +10,7 @@ class Product extends Model
 
     public function getProductAll()
     {
-      $data = $this->select('D04_001_C','D04_002_C')
+      $data = $this->select('D04_001_C','D04_002_C','D04_012_B','D04_004_B')
                    ->get();
       return $data;
     }

@@ -31,10 +31,8 @@ Route::prefix('/vendedores')->group(function () {
 
 });
 
-Route::prefix('/product')->group(function () {
+Route::prefix('/produtos')->group(function () {
 
-Route::get('/produtos', function () {
-    return view('dashboard.product.productlist');
-})->name('productList');
+Route::get('/lista', 'Dashboard\ProductController@index')->name('productList');
 
 });

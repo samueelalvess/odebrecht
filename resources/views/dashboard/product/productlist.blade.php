@@ -25,14 +25,14 @@
             <th>Valor Sug.</th>
           </thead>
           <tbody>
-
+            @foreach($product as $products)
             <tr>
-              <td>00001</td>
-              <td>Café Solúvel Odebrecht</td>
-              <td>1043 un</td>
-              <td><label class="badge bdg-green">R$ 10,50</label></td>
+              <td>{{$products->D04_001_C}}</td>
+              <td>{{$products->D04_002_C}}</td>
+              <td>{{$products->D04_051_B}}</td>
+              <td><label class="badge bdg-green">R$ {{$products->D04_004_B}}</label></td>
             </tr>
-
+            @endforeach
           </tbody>
         </table>
       </div>

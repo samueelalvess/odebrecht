@@ -40,7 +40,8 @@ class SellerController extends Controller
     public function edit($id)
     {
         $_seller = $this->seller->getSellerId($id);
-        return view('',['seller' => $_seller]); 
+        return view('dashboard.seller.seller',['seller' => $_seller]); 
+
     }
 
     public function update(Request $request, $id)

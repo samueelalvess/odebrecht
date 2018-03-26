@@ -59,7 +59,7 @@
 
         <div class="col-md-2 col-sm-6 col-xs-12 form-group">
           <label>Cidade/UF</label>
-          <input type="text" class="form-control" readonly value="@if(!empty($seller)){{$seller[0]->A24_001_C}}@endif" placeholder="Cidade/UF">
+          <input type="text" class="form-control" readonly value="@if(!empty($seller)){{trim($seller[0]->A24_001_C).'/'.$seller[0]->A23_001_C}}@endif" placeholder="Cidade/UF">
         </div>
 
         <div class="x_title">
