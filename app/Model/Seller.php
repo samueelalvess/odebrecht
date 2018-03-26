@@ -20,6 +20,7 @@ class Seller extends Model
   {
     return $this->select()
                 ->where('A33_001_C',$id)
+                ->leftJoin('A24', 'A33.A24_UKEY', '=', 'A24.UKEY')
                 ->get();
   }
 
