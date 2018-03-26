@@ -19,8 +19,8 @@ class Seller extends Model
   public function getSellerId($id)
   {
     return $this->select()
-                ->where('A33_001_C',$id)
                 ->leftJoin('A24', 'A33.A24_UKEY', '=', 'A24.UKEY')
+                ->where('A33_001_C',$id)
                 ->get();
   }
 
