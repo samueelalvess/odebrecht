@@ -19,6 +19,7 @@ class ClientController extends Controller
     public function index()
     {
         $clientlist = $this->client->getClientAll();
+        //print_r($clientlist);
         return view('dashboard.client.clientlist',['client' => $clientlist]);
     }
 
