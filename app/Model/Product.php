@@ -19,8 +19,8 @@ class Product extends Model
 
                                   ->orWhere(function ($query2) {
                                       $query2->where('D04.D04_077_N',1)
-                                             ->where('D03.D03_004_N',1)
-                                  })
+                                              ->where('D03.D03_004_N',1);
+                                  });
                             })
                    ->orderBy('D04_001_C','desc')
                    ->get();
