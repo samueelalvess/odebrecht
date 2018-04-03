@@ -31,8 +31,10 @@ Route::prefix('/vendedores')->group(function () {
 
 });
 
-Route::prefix('/produtos')->group(function () {
+Route::prefix('/pedidos')->group(function () {
 
-Route::get('/lista', 'Dashboard\ProductController@index')->name('productList');
+  Route::get('/novo', function () {
+  return view('dashboard.order.order');
+})->name('newOrder');
 
 });
