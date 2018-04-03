@@ -15,7 +15,7 @@ class Client extends Model
       return $this->select('A03_001_C','A03_002_C','A03_003_C','A03_012_C','A03_009_C','A03_010_C','A24_001_C','A03_017_C','A03_500_C')
                   ->leftJoin('A24', 'A03.A24_UKEY', '=', 'A24.UKEY')
                   ->Where('ARRAY_003','1')
-                  ->Where('A33_UKEY','JAHMO0UMYK_2HE15BBI8')
+                  ->Where('A33_UKEY','7CB0A0344D4C414E95CC')
                   ->get();
     }
 
