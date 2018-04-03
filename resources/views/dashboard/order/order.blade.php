@@ -23,8 +23,9 @@
           <h2>Cliente</h2>
           <select class="selectpicker form-control" data-live-search="true">
             <option> -- Informe o cliente que você deseja realizar o pedido -- </option>
-            <option data-tokens="cafe">CAFE SOLUVEL ODEBRECHT SACHET 24X50 GR</option>
-            <option data-tokens="açucar">AÇUCAR SOLUVEL ODEBRECHT</option>
+            @foreach($clients as $client)
+              <option data-tokens="{{$client->A03_002_C}}">{{$client->A03_002_C}}</option>
+            @endforeach
           </select>
           <hr>
 
@@ -44,34 +45,36 @@
           </thead>
 
           <tbody>
-            <tr>
-              <td>000053C</td>
-              <td>CAFE SOLUVEL ODEBRECHT SACHET 24X50 GR</td>
-              <td>
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                            <span class="glyphicon glyphicon-minus"></span>
-                        </button>
-                    </span>
-                        <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
-                            <span class="glyphicon glyphicon-plus"></span>
-                        </button>
-                    </span>
-                </div>
-              </td>
-              <td>
-                <div class="input-group">
-                  <span class="input-group-addon" id="basic-addon1">R$</span>
-                  <input type="text" class="form-control" placeholder="0,00">
-                </div>
-              </td>
-              <td>
-                <button class="btn btn-success pull-right" style="border-radius:0px;"><i class="fa fa-plus"></i> <i class="fa fa-shopping-cart"></i></button>
-              </td>
-            </tr>
+            @foreach($products as $product)
+                <tr>
+                  <td>{{$product->D04_001_C}}</td>
+                  <td>{{$product->D04_002_C}}</td>
+                  <td>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                <span class="glyphicon glyphicon-minus"></span>
+                            </button>
+                        </span>
+                            <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">R$</span>
+                      <input type="text" class="form-control" placeholder="0,00">
+                    </div>
+                  </td>
+                  <td>
+                    <button class="btn btn-success pull-right" style="border-radius:0px;"><i class="fa fa-plus"></i> <i class="fa fa-shopping-cart"></i></button>
+                  </td>
+                </tr>
+            @endforeach
           </tbody>
         </table>
       </div>
