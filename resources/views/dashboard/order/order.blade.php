@@ -73,7 +73,6 @@
               </td>
             </tr>
           </tbody>
-
         </table>
       </div>
 
@@ -84,6 +83,54 @@
           <h2><i class="fa fa-shopping-cart"></i> Ítens do Pedido</h2>
           <div class="clearfix"></div>
         </div>
+
+        <table class="table table-responsive text-center" id="carrinhoList">
+
+          <thead>
+            <th>Cód</th>
+            <th>Descrição</th>
+            <th class="col-md-2">Qtd</th>
+            <th class="col-md-2">Valor Unit.</th>
+            <th class="col-md-2 text-center">Valor Total</th>
+            <th></th>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>000053C</td>
+              <td>CAFE SOLUVEL ODEBRECHT SACHET 24X50 GR</td>
+              <td>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[2]">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </span>
+                        <input type="text" name="quant[2]" class="form-control input-number" value="4" min="1" max="10">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </span>
+                </div>
+              </td>
+              <td>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">R$</span>
+                  <input type="text" class="form-control" value="R$ 100,00">
+                </div>
+              </td>
+              <td align="center">
+                <div class="input-group">
+                  <label>R$ 400,00</label>
+                </div>
+              </td>
+              <td>
+                <button class="btn btn-danger pull-right" style="border-radius:0px;"><i class="fa fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
       </div>
 
