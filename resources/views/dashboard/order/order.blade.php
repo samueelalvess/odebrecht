@@ -29,7 +29,7 @@
           <hr>
 
         <div class="x_title">
-          <h2>Produtos</h2>
+          <h2><i class="fa fa-coffe"></i> Produtos</h2>
           <div class="clearfix"></div>
         </div>
 
@@ -77,6 +77,17 @@
         </table>
       </div>
 
+      <div class="x_content">
+        <hr>
+
+        <div class="x_title">
+          <h2><i class="fa fa-shopping-cart"></i> Ítens do Pedido</h2>
+          <div class="clearfix"></div>
+        </div>
+
+      </div>
+
+
     </div>
   </div>
 </div>
@@ -85,11 +96,12 @@
 @endsection
 
 @section('javascript')
-<script src="{{ asset('dashboard/assets/js/lib/data-table/datatables.min.js') }}"></script>
+
 <script src="{{ asset('dashboard/assets/js/lib/data-table/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/lib/data-table/datatables-init.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/lib/notify/bootstrap-notify.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/order/order.js') }}"></script>
 <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js') }}"></script>
 @parent
 @stop
