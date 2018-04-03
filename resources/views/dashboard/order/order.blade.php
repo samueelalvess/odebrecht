@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{{ asset('dashboard/assets/css/lib/datatable/dataTables.bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('dashboard/assets/css/lib/animate/animate.min.css') }}">
 <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css') }}">
+<link rel="stylesheet" src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css') }}">
 @parent
 @stop
 
@@ -47,18 +48,18 @@
           <tbody>
             @foreach($products as $product)
                 <tr>
-                  <td>{{$product->D04_001_C}}</td>
-                  <td>{{$product->D04_002_C}}</td>
+                  <td data-cod="{{$product->D04_001_C}}">{{$product->D04_001_C}}</td>
+                  <td data-desc="{{$product->D04_002_C}}">{{$product->D04_002_C}}</td>
                   <td>
                     <div class="input-group">
                         <span class="input-group-btn">
-                            <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                            <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[{{$product->D04_001_C}}]">
                                 <span class="glyphicon glyphicon-minus"></span>
                             </button>
                         </span>
-                            <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                            <input type="text" id="qtd-{{trim($product->D04_001_C)}}" name="quant[{{$product->D04_001_C}}]" class="form-control input-number" value="1" min="1" max="10">
                         <span class="input-group-btn">
-                            <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                            <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[{{$product->D04_001_C}}]">
                                 <span class="glyphicon glyphicon-plus"></span>
                             </button>
                         </span>
@@ -67,11 +68,11 @@
                   <td>
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">R$</span>
-                      <input type="text" class="form-control" placeholder="0,00">
+                      <input type="text" id="valor-{{trim($product->D04_001_C)}}" class="form-control valor" data-symbol="R$ " data-thousands="." data-decimal="," placeholder="0,00">
                     </div>
                   </td>
                   <td>
-                    <button class="btn btn-success pull-right" style="border-radius:0px;"><i class="fa fa-plus"></i> <i class="fa fa-shopping-cart"></i></button>
+                    <button class="btn btn-success pull-right btncarrinho" style="border-radius:0px;"><i class="fa fa-plus"></i> <i class="fa fa-shopping-cart"></i></button>
                   </td>
                 </tr>
             @endforeach
@@ -79,9 +80,8 @@
         </table>
       </div>
 
-      <div class="x_content">
-        <hr>
-
+      <div class="x_content" style="background-color:#EEEEEE;">
+        <br>
         <div class="x_title">
           <h2><i class="fa fa-shopping-cart"></i> Ítens do Pedido</h2>
           <div class="clearfix"></div>
@@ -91,47 +91,15 @@
 
           <thead>
             <th>Cód</th>
-            <th>Descrição</th>
-            <th class="col-md-2">Qtd</th>
-            <th class="col-md-2">Valor Unit.</th>
+            <th class="text-center">Descrição</th>
+            <th class="col-md-1 text-center">Qtd</th>
+            <th class="col-md-2 text-center">Valor Unit.</th>
             <th class="col-md-2 text-center">Valor Total</th>
             <th></th>
           </thead>
 
-          <tbody>
-            <tr>
-              <td>000053C</td>
-              <td>CAFE SOLUVEL ODEBRECHT SACHET 24X50 GR</td>
-              <td>
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[2]">
-                            <span class="glyphicon glyphicon-minus"></span>
-                        </button>
-                    </span>
-                        <input type="text" name="quant[2]" class="form-control input-number" value="4" min="1" max="10">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]">
-                            <span class="glyphicon glyphicon-plus"></span>
-                        </button>
-                    </span>
-                </div>
-              </td>
-              <td>
-                <div class="input-group">
-                  <span class="input-group-addon" id="basic-addon1">R$</span>
-                  <input type="text" class="form-control" value="R$ 100,00">
-                </div>
-              </td>
-              <td align="center">
-                <div class="input-group">
-                  <label>R$ 400,00</label>
-                </div>
-              </td>
-              <td>
-                <button class="btn btn-danger pull-right" style="border-radius:0px;"><i class="fa fa-trash"></i></button>
-              </td>
-            </tr>
+          <tbody id="carrinhobody">
+
           </tbody>
         </table>
 
@@ -153,5 +121,10 @@
 <script src="{{ asset('dashboard/assets/js/order/order.js') }}"></script>
 <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js') }}"></script>
 <script src="{{ asset('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
+<script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js') }}"></script>
+<script>
+
+</script>
 @parent
 @stop
