@@ -21,6 +21,14 @@ class Client extends Model
                   ->get();
     }
 
+    public function getClientAllBasic()
+    {
+      return $this->select('A03_001_C','A03_002_C','A03_003_C','ARRAY_009','UKEY')
+                  ->Where('ARRAY_003','1')
+                  ->Where('A33_UKEY','7CB0A0344D4C414E95CC')
+                  ->get();
+    }
+
     public function getClientId($id)
     {
       return $this->select('A03_001_C','A03_002_C','A03_003_C','A03_004_C','A03_005_C','A03_006_C','A03_008_M',
