@@ -99,12 +99,17 @@
           </thead>
 
           <tbody id="carrinhobody">
-
+            
           </tbody>
         </table>
 
+
       </div>
 
+              <div class="col-md-12">
+                <hr>
+                <button class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button>
+              </div>
 
     </div>
   </div>
