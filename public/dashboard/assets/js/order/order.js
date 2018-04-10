@@ -128,14 +128,26 @@ function adiciona(cod, desc, qtd, valor, total) {
                            '</td>'+
                           '<td align="center">'+
                              '<div class="input-group">'+
-                               '<label>'+total+'</label>'+
+                               '<label>R$ '+total+'</label>'+
                              '</div>'+
                            '</td>'+
                            '<td>'+
                              '<button class="btn btn-danger pull-right" style="border-radius:0px;" onclick="removelinha(this)"><i class="fa fa-trash"></i></button>'+
                           ' </td>'+
                          '</tr>');
+
    }
+   var v1 = $('#totaltxt').text();
+   totall = total;
+
+   totaltxt = v1.replace('.','');
+   totaltxt = v1.replace(',','.');
+
+   total = totall.replace('.','');
+   total = totall.replace(',','.');
+   var somar = parseFloat(totaltxt) + parseFloat(total);
+
+   $('#totaltxt').text(somar);
 }
 
 function removelinha(obj) {
@@ -158,7 +170,7 @@ function multiplica(v1,v2)
 	v2 = v2.replace(',','.');
 
 	var multiplicar = parseFloat(v1) * parseFloat(v2);
-	return multiplicar.toLocaleString("pt-BR", { style: "currency" , currency:"BRL"});
+	return multiplicar.toLocaleString("pt-BR");
 
 }
 
@@ -185,7 +197,7 @@ $(function(){
 
             // adiciona a tabela
           adiciona(cod.trim(), desc.trim(), qtd.trim(), valor.trim(), total);
-          tablevalues(cod.trim(), desc.trim(), qtd.trim(), valor.trim(), total);
+
             //
 
         } else {
@@ -193,16 +205,3 @@ $(function(){
         }
     });
 });
-
-function tablevalues(cod,desc,qtd,valor){
-   var productsData = [];
-     var pData = {
-               codigo: cod,
-               descricao:  desc,
-               quantidade: qtd,
-               valor: valor
-           };
-     productsData.push(pData);
-
-   $("#carrinhobody").html(JSON.stringify(productsData));
-}

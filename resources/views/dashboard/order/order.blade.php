@@ -99,8 +99,16 @@
           </thead>
 
           <tbody id="carrinhobody">
-            
+
           </tbody>
+          <tfoot>
+            <tr>
+                <th colspan="4" class="text-right"><strong><h4>TOTAL</h4></strong></th>
+                <th class="text-center">
+                    <h4>R$ <span id="totaltxt"> 0,00 </span></h4>
+                </th>
+            </tr>
+          </tfoot>
         </table>
 
 
@@ -108,7 +116,7 @@
 
               <div class="col-md-12">
                 <hr>
-                <button class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button>
+                <a href="{{route('checkoutOrder',['id'=>1])}}"<button class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
               </div>
 
     </div>
