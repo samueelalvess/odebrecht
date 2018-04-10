@@ -36,6 +36,7 @@
               <li><a href="e">Teste</a></li>
             </ul>
           </li>
+          <li><a href="4"><i class="fa fa-info"></i> Informativo </a></li>
         </ul>
       </div>
       <div class="menu_section">

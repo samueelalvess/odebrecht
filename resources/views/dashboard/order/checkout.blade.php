@@ -3,8 +3,6 @@
 @section('css')
 <link rel="stylesheet" href="{{ asset('dashboard/assets/css/lib/datatable/dataTables.bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('dashboard/assets/css/lib/animate/animate.min.css') }}">
-<link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css') }}">
-<link rel="stylesheet" src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css') }}">
 @parent
 @stop
 
@@ -294,7 +292,7 @@
           <div class="clearfix"></div>
         </div>
 
-        <table class="table table-responsive text-center" id="carrinhoList">
+        <table class="table table-responsive text-center" id="productList">
 
           <thead>
             <th>Cód</th>
@@ -330,10 +328,8 @@
 <script src="{{ asset('dashboard/assets/js/lib/data-table/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/lib/data-table/datatables-init.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/lib/notify/bootstrap-notify.js') }}"></script>
-<script src="{{ asset('dashboard/assets/js/order/order.js') }}"></script>
-<script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/checkout/checkout.js') }}"></script>
 <script src="{{ asset('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
 <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js') }}"></script>
 <script>
 
