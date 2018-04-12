@@ -41,7 +41,11 @@ Route::prefix('/pedidos')->group(function () {
 
   Route::get('/faturados', function () {
   return view('dashboard.order.billedorderslist');
-})->name('billedList');
+  })->name('billedList');
+
+  Route::get('/naofaturados', function () {
+  return view('dashboard.order.notbilledorderslist');
+  })->name('notbilledList');
 
 });
 

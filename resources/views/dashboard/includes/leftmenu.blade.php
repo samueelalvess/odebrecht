@@ -33,7 +33,7 @@
             <ul class="nav child_menu">
               <li><a href="{{route('newOrder')}}">Novo Pedido</a></li>
               <li><a href="{{route('billedList')}}">Pedidos faturados</a></li>
-              <li><a href="e">Pedidos não faturados</a></li>
+              <li><a href="{{route('notbilledList')}}">Pedidos não faturados</a></li>
             </ul>
           </li>
           <li><a href="{{route('informativeList')}}"><i class="fa fa-info"></i> Informativos </a></li>
