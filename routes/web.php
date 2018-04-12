@@ -40,3 +40,11 @@ Route::prefix('/pedidos')->group(function () {
   })->name('checkoutOrder');
 
 });
+
+Route::prefix('/informativos')->group(function () {
+
+  Route::get('/lista', function () {
+  return view('dashboard.informative.informativelist');
+})->name('informativeList');
+
+});
