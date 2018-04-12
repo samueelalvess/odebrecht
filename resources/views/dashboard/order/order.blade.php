@@ -84,12 +84,14 @@
         <br>
         <div class="x_title">
           <h2><i class="fa fa-shopping-cart"></i> Ítens do Pedido</h2>
+
           <div class="clearfix"></div>
         </div>
 
         <table class="table table-responsive text-center" id="carrinhoList">
 
           <thead>
+
             <th>Cód</th>
             <th class="text-center">Descrição</th>
             <th class="col-md-1 text-center">Qtd</th>
@@ -101,6 +103,46 @@
           <tbody id="carrinhobody">
 
           </tbody>
+          <?php
+
+          if (isset($_COOKIE["carrinho"]))
+          {
+            $cookie = explode('/',$_COOKIE["carrinho"]);
+
+            foreach ($cookie as $valor) {
+              $coo = explode(':',$valor);
+              if(!empty($coo[0]))
+              {
+                echo '<tr>
+                              <td>'.$coo[0].'</td>
+                              <td>'.$coo[1].'</td>
+                              <td>
+
+                                  <input type="text" name="quantc[5]" class="form-control input-number" value="'.$coo[2].'" min="1" max="10">
+
+                              </td>
+                              <td>
+                                <div class="input-group">
+                                  <span class="input-group-addon" id="basic-addon1">R$</span>
+                                  <input type="text" class="form-control" value="'.$coo[3].'">
+                                </div>
+                              </td>
+                             <td align="center">
+                                <div class="input-group">
+                                  <label>R$ '.$coo[4].'</label>
+                                </div>
+                              </td>
+                              <td>
+                                <button class="btn btn-danger pull-right" style="border-radius:0px;" onclick="removelinha(this,\''.$coo[0].'\')"><i class="fa fa-trash"></i></button>
+                              </td>
+                            </tr>';
+              }
+
+            }
+          }
+
+
+          ?>
           <tfoot>
             <tr>
                 <th colspan="4" class="text-right"><strong><h4>TOTAL</h4></strong></th>

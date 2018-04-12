@@ -132,7 +132,7 @@ function adiciona(cod, desc, qtd, valor, total) {
                              '</div>'+
                            '</td>'+
                            '<td>'+
-                             '<button class="btn btn-danger pull-right" style="border-radius:0px;" onclick="removelinha(this)"><i class="fa fa-trash"></i></button>'+
+                             '<button class="btn btn-danger pull-right" style="border-radius:0px;" onclick="removelinha(this,\''+cod+'\')"><i class="fa fa-trash"></i></button>'+
                           ' </td>'+
                          '</tr>');
 
@@ -148,9 +148,53 @@ function adiciona(cod, desc, qtd, valor, total) {
    var somar = parseFloat(totaltxt) + parseFloat(total);
 
    $('#totaltxt').text(somar);
+   var item = cod+':'+desc+':'+qtd+':'+valor+':'+total+'/';
+   var cookie = getCookie('teste');
+   item += cookie;
+   setCookie('carrinho',item,'1');
+
+
+
 }
 
-function removelinha(obj) {
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function removelinha(obj,cod) {
+  var cookie = getCookie('carrinho');
+  cookie = cookie.split('/');
+  var item_remove = '';
+  for (var i = 0; i < cookie.length; i++) {
+    var cc = cookie[i].split(':');
+    if (cc[0] != cod && cc[0] != '')
+    {
+      item_remove += cookie[i]+'/';
+
+    }
+  }
+  setCookie('carrinho',item_remove,'1');
+
   $(obj).closest('tr').remove();
   $.notify({
       icon: 'fa fa-times',
@@ -159,6 +203,8 @@ function removelinha(obj) {
         type: 'danger',
         timer: 1000
     });
+
+
 }
 
 function multiplica(v1,v2)
