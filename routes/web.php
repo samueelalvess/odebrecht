@@ -39,6 +39,10 @@ Route::prefix('/pedidos')->group(function () {
   return view('dashboard.order.checkout');
   })->name('checkoutOrder');
 
+  Route::get('/faturados', function () {
+  return view('dashboard.order.billedorderslist');
+})->name('billedList');
+
 });
 
 Route::prefix('/informativos')->group(function () {
