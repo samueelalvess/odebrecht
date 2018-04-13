@@ -37,6 +37,9 @@
             <label>Filial</label>
             <select class="form-control" name="filial">
               <option> -- SELECIONE -- </option>
+              @foreach($branch as $br)
+                <option value="{{trim($br->ukey)}}">{{trim($br->a10_002_c)}}</option>
+              @endforeach
             </select>
           </div>
 
@@ -44,6 +47,10 @@
             <label>Tipo Frete</label>
             <select class="form-control" name="tipofrete">
               <option> -- SELECIONE -- </option>
+              <option value="1">EMITENTE</option>
+              <option value="2">DESTINATARIO/REMETENTE</option>
+              <option value="3">TERCEIROS</option>
+              <option value="4">SEM FRETE</option>
             </select>
           </div>
           <div class="col-md-12"><hr></div>
@@ -51,6 +58,9 @@
             <label>Tipo de Documento</label>
           <select class="form-control" name="tipodocumento">
             <option> -- SELECIONE -- </option>
+            @foreach($documents as $doc)
+              <option value="{{trim($doc->ukey)}}">{{trim($doc->a21_002_c)}}</option>
+            @endforeach
           </select>
           </div>
 
@@ -58,6 +68,9 @@
             <label>Prazo de Pagamento</label>
             <select class="form-control" name="prazopagamento">
               <option> -- SELECIONE -- </option>
+              @foreach($payment as $pay)
+                <option value="{{trim($pay->ukey)}}">{{trim($pay->a13_002_c)}}</option>
+              @endforeach
             </select>
           </div>
 
@@ -65,6 +78,9 @@
             <label>Tipo de Faturamento</label>
             <select class="form-control" name="tipofaturamento">
               <option> -- SELECIONE -- </option>
+              @foreach($billed as $bi)
+                <option value="{{trim($bi->ukey)}}">{{trim($bi->t04_002_c)}}</option>
+              @endforeach
             </select>
           </div>
           <div class="col-md-12"><hr></div>

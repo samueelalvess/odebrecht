@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Client;
 use App\Model\Product;
+use App\Model\Branch;
+use App\Model\Document;
+use App\Model\Payment;
+use App\Model\Billed;
 
 class RequestController extends Controller
 {
@@ -83,5 +87,20 @@ class RequestController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function checkout(Branch $br,Document $doc,Billed $bi,Payment $pay)
+    {
+      $branchall = $br->getBranchAll();
+      $docs = $doc->getDocumentAll();
+      $pays = $pay->getPaymentAll();
+      $bis = $bi->getBilledAll();
+      return view('dashboard.order.checkout',
+                                              [
+                                                'branch'=>$branchall,
+                                                'documents'=>$docs,
+                                                'payment'=>$pays,
+                                                'billed'=>$bis,
+                                              ]
+                  );
     }
 }

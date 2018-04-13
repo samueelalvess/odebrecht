@@ -34,10 +34,7 @@ Route::prefix('/vendedores')->group(function () {
 Route::prefix('/pedidos')->group(function () {
 
   Route::get('/novo','Dashboard\RequestController@create')->name('newOrder');
-
-  Route::get('/finalizar', function () {
-  return view('dashboard.order.checkout');
-  })->name('checkoutOrder');
+  Route::get('/{id}/finalizar','Dashboard\RequestController@checkout')->name('checkoutOrder');
 
   Route::get('/faturados', function () {
   return view('dashboard.order.billedorderslist');
