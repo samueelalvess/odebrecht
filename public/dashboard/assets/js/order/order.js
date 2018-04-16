@@ -137,6 +137,7 @@ function adiciona(cod, desc, qtd, valor, total) {
                          '</tr>');
 
    }
+   var formato = { minimumFractionDigits: 2 }
    var v1 = $('#totaltxt').text();
    totall = total;
 
@@ -146,14 +147,12 @@ function adiciona(cod, desc, qtd, valor, total) {
    total = totall.replace('.','');
    total = totall.replace(',','.');
    var somar = parseFloat(totaltxt) + parseFloat(total);
-
+   var somar = somar.toLocaleString("pt-BR", formato);
    $('#totaltxt').text(somar);
    var item = cod+':'+desc+':'+qtd+':'+valor+':'+total+'/';
    var cookie = getCookie('teste');
    item += cookie;
    setCookie('carrinho',item,'1');
-
-
 
 }
 
@@ -209,6 +208,7 @@ function removelinha(obj,cod) {
 
 function multiplica(v1,v2)
 {
+  var formato = { minimumFractionDigits: 2 }
 	v1 = v1.replace('.','');
 	v1 = v1.replace(',','.');
 
@@ -216,7 +216,7 @@ function multiplica(v1,v2)
 	v2 = v2.replace(',','.');
 
 	var multiplicar = parseFloat(v1) * parseFloat(v2);
-	return multiplicar.toLocaleString("pt-BR");
+	return multiplicar.toLocaleString("pt-BR", formato);
 
 }
 
