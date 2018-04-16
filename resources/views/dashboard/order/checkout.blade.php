@@ -17,13 +17,13 @@
           <div class="well well-sm">
               <div class="row">
                   <div class="col-md-4">
-                      <h4><i class="fa fa-building-o"></i> <strong>SUPERMERCADO SAMUEL</strong></h4>
-                      <strong>Documento</strong> 08779560903
+                      <h4><i class="fa fa-building-o"></i> <strong>{{$clientbilled->EMPRESA}}</strong></h4>
+                      <strong>Documento</strong> {{$clientbilled->CNPJ_CPF}}
                   </div>
                   <div class="col-md-4">
-                      <strong>Nome</strong> SAMUEL ALVES DA SILVA<br>
+                      <strong>Nome</strong> {{$clientbilled->EMPRESA}}<br>
                       <strong>E-mail</strong> ATENDIMENTO@W8TECNOLOGIA.COM.BR<br>
-                      <strong>Telefone</strong> 43996088692
+                      <strong>Telefone</strong> {{$clientbilled->TELEFONE}}
                   </div>
                   <div class="col-md-4"></div>
               </div>
@@ -125,7 +125,7 @@
                     <div class="col-md-12">
                         <div class="form-group form-group-sm">
                             <label class="control-label">Empresa</label>
-                            <input type="text" name="nome_fantasia" class="form-control" readonly>
+                            <input type="text" name="nome_fantasia" value="{{$clientbilled->EMPRESA}}" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -133,13 +133,13 @@
                     <div class="col-md-6">
                         <div class="form-group form-group-sm">
                             <label class="control-label">CNPJ</label>
-                            <input type="text" name="cpf_cnpj" class="form-control" readonly>
+                            <input type="text" name="cpf_cnpj" value="{{$clientbilled->CNPJ_CPF}}" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Insc. Estadual</label>
-                            <input type="text" name="inscricao_rg" class="form-control" readonly>
+                            <input type="text" name="inscricao_rg" value="{{$clientbilled->INSCRICAO_RG}}" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -147,13 +147,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Endereço</label>
-                            <input type="text" name="endereco" class="form-control" readonly>
+                            <input type="text" name="endereco" value="{{$clientbilled->ENDERECO}} - {{$clientbilled->NUMERO}}" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">CEP</label>
-                            <input type="text" name="cep" class="form-control" readonly>
+                            <input type="text" name="cep" value="{{$clientbilled->CEP}}" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -161,13 +161,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Cidade</label>
-                            <input type="text" name="cidade" class="form-control" readonly>
+                            <input type="text" name="cidade" value="{{$clientbilled->CIDADE}}" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">UF</label>
-                            <input type="text" name="estado" class="form-control" readonly>
+                            <input type="text" name="estado" value="{{$clientbilled->UF}}" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -175,7 +175,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="control-label">Telefone</label>
-                            <input type="text" name="telefone" class="form-control" readonly>
+                            <input type="text" name="telefone" value="{{$clientbilled->TELEFONE}}" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -188,7 +188,7 @@
                     <div class="col-md-12">
                         <div class="form-group form-group-sm">
                             <label class="control-label">Empresa</label>
-                            <input type="text" name="nome_fantasia_ent" class="form-control" readonly>
+                            <input type="text" name="nome_fantasia_ent" value="@if(!empty($delivery)) {{$delivery->EMPRESA_ENTREGA}} @endif" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -196,13 +196,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Endereço</label>
-                            <input type="text" name="endereco_ent" class="form-control" readonly>
+                            <input type="text" name="endereco_ent" value="@if(!empty($delivery)) {{$delivery->ENDERECO_ENTREGA}} - {{$delivery->NUMERO_ENTREGA}} @endif" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">CEP</label>
-                            <input type="text" name="cep_ent" class="form-control" readonly>
+                            <input type="text" name="cep_ent" value="@if(!empty($delivery)) {{$delivery->CEP_ENTREGA}} @endif" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -210,13 +210,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Cidade</label>
-                            <input type="text" name="cidade_ent" class="form-control" readonly>
+                            <input type="text" name="cidade_ent" value="@if(!empty($delivery)) {{$delivery->CIDADE_ENTREGA}} @endif" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">UF</label>
-                            <input type="text" name="estado_ent" class="form-control" readonly>
+                            <input type="text" name="estado_ent" value="@if(!empty($delivery)) {{$delivery->UF_ENTREGA}} @endif" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -224,7 +224,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="control-label">Telefone</label>
-                            <input type="text" name="telefone_ent" class="form-control" readonly>
+                            <input type="text" name="telefone_ent" value="@if(!empty($delivery)) {{$delivery->TELEFONE_ENTREGA}} @endif" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -235,7 +235,7 @@
                     <div class="col-md-12">
                         <div class="form-group form-group-sm">
                             <label class="control-label">Empresa</label>
-                            <input type="text" name="nome_fantasia_cob" class="form-control" readonly>
+                            <input type="text" name="nome_fantasia_cob" value="@if(!empty($delivery)) {{$delivery->EMPRESA_ENTREGA}} @endif" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -243,13 +243,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Endereço</label>
-                            <input type="text" name="endereco_cob" class="form-control" readonly>
+                            <input type="text" name="endereco_cob" value="@if(!empty($delivery)) {{$delivery->ENDERECO_ENTREGA}} - {{$delivery->NUMERO_ENTREGA}} @endif" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">CEP</label>
-                            <input type="text" name="cep_cob" class="form-control" readonly>
+                            <input type="text" name="cep_cob" value="@if(!empty($delivery)) {{$delivery->CEP_ENTREGA}} @endif" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -257,13 +257,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Cidade</label>
-                            <input type="text" name="cidade_cob" class="form-control" readonly>
+                            <input type="text" name="cidade_cob" value="@if(!empty($delivery)) {{$delivery->CIDADE_ENTREGA}} @endif" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">UF</label>
-                            <input type="text" name="estado_cob" class="form-control" readonly>
+                            <input type="text" name="estado_cob" value="@if(!empty($delivery)) {{$delivery->UF_ENTREGA}} @endif" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -271,7 +271,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="control-label">Telefone</label>
-                            <input type="text" name="telefone_cob" class="form-control" readonly>
+                            <input type="text" name="telefone_cob" value="@if(!empty($delivery)) {{$delivery->TELEFONE_ENTREGA}} @endif" class="form-control" readonly>
                         </div>
                     </div>
                 </div>
@@ -320,7 +320,46 @@
           </thead>
 
           <tbody id="carrinhobody">
+            <?php
 
+            if (isset($_COOKIE["carrinho"]))
+            {
+              $cookie = explode('/',$_COOKIE["carrinho"]);
+
+              foreach ($cookie as $valor) {
+                $coo = explode(':',$valor);
+                if(!empty($coo[0]))
+                {
+                  echo '<tr>
+                                <td>'.$coo[0].'</td>
+                                <td>'.$coo[1].'</td>
+                                <td>
+
+                                    <input type="text" name="quantc[5]" class="form-control input-number" value="'.$coo[2].'" min="1" max="10">
+
+                                </td>
+                                <td>
+                                  <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">R$</span>
+                                    <input type="text" class="form-control" value="'.$coo[3].'">
+                                  </div>
+                                </td>
+                               <td align="center">
+                                  <div class="input-group">
+                                    <label>R$ '.$coo[4].'</label>
+                                  </div>
+                                </td>
+                                <td>
+                                  <button class="btn btn-danger pull-right" style="border-radius:0px;" onclick="removelinha(this,\''.$coo[0].'\')"><i class="fa fa-trash"></i></button>
+                                </td>
+                              </tr>';
+                }
+
+              }
+            }
+
+
+            ?>
           </tbody>
         </table>
 

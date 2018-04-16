@@ -149,7 +149,7 @@ function adiciona(cod, desc, qtd, valor, total) {
 
    $('#totaltxt').text(somar);
    var item = cod+':'+desc+':'+qtd+':'+valor+':'+total+'/';
-   var cookie = getCookie('teste');
+   var cookie = getCookie('carrinho');
    item += cookie;
    setCookie('carrinho',item,'1');
 

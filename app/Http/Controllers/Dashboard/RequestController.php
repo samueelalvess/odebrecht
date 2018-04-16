@@ -88,18 +88,22 @@ class RequestController extends Controller
     {
         //
     }
-    public function checkout(Branch $br,Document $doc,Billed $bi,Payment $pay)
+    public function checkout(Branch $br,Document $doc,Billed $bi,Payment $pay,Client $cli,$ukey_client)
     {
       $branchall = $br->getBranchAll();
       $docs = $doc->getDocumentAll();
       $pays = $pay->getPaymentAll();
       $bis = $bi->getBilledAll();
+      $clis = $cli->getClientBilled($ukey_client);
+      $clideli = $cli->getClientDelivery($ukey_client);
       return view('dashboard.order.checkout',
                                               [
                                                 'branch'=>$branchall,
                                                 'documents'=>$docs,
                                                 'payment'=>$pays,
                                                 'billed'=>$bis,
+                                                'clientbilled'=>$clis,
+                                                'delivery'=>$clideli
                                               ]
                   );
     }
