@@ -41,15 +41,14 @@ class RequestController extends Controller
 
     public function store(Request $request)
     {
-        //
+      $pe = new \App\Model\Request();
+      if ( $pe->setRequest($request) )
+          return 'sucesso';
+      else
+          return 'erro';
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //

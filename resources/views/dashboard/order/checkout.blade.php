@@ -9,6 +9,8 @@
 @section('title', 'Finalizar Pedido')
 
 @section('content')
+<form action="{{route('finalizarTESTE')}}" method="post">
+  {{ csrf_field() }}
 <div class="row">
   <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
@@ -47,10 +49,8 @@
             <label>Tipo Frete</label>
             <select class="form-control" name="tipofrete">
               <option> -- SELECIONE -- </option>
-              <option value="1">EMITENTE</option>
-              <option value="2">DESTINATARIO/REMETENTE</option>
-              <option value="3">TERCEIROS</option>
-              <option value="4">SEM FRETE</option>
+              <option value="CIF">CIF</option>
+              <option value="FOB">FOB</option>
             </select>
           </div>
           <div class="col-md-12"><hr></div>
@@ -87,17 +87,17 @@
 
           <div class="col-md-4">
             <label>Mensagem romaneio</label>
-          <textarea class="form-control" rows="3"></textarea>
+          <textarea name="msgromaneio" class="form-control" rows="3"></textarea>
           </div>
 
           <div class="col-md-4">
             <label>Obs. Liberação</label>
-          <textarea class="form-control" rows="3"></textarea>
+          <textarea name="msgliberacao" class="form-control" rows="3"></textarea>
           </div>
 
           <div class="col-md-4">
             <label>Observações</label>
-          <textarea class="form-control" rows="3"></textarea>
+          <textarea name="observacoes" class="form-control" rows="3"></textarea>
           </div>
           <div class="col-md-12"><hr></div>
 
@@ -379,12 +379,14 @@
 
               <div class="col-md-12">
                 <hr>
-                <button class="btn btn-success pull-right" style="border-radius:0px;"><i class="fa fa-save"></i> Finalizar</button>
+                <button type="submit" class="btn btn-success pull-right" style="border-radius:0px;"><i class="fa fa-save"></i> Finalizar</button>
               </div>
 
     </div>
   </div>
 </div>
+
+</form>
 
 
 @endsection
