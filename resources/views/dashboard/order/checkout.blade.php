@@ -18,11 +18,11 @@
         <div id="dv-clienteselecionado" class="container">
           <div class="well well-sm">
               <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                       <h4><i class="fa fa-building-o"></i> <strong>{{$clientbilled->EMPRESA}}</strong></h4>
                       <strong>Documento</strong> {{$clientbilled->CNPJ_CPF}}
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                       <strong>Nome</strong> {{$clientbilled->EMPRESA}}<br>
                       <strong>E-mail</strong> ATENDIMENTO@W8TECNOLOGIA.COM.BR<br>
                       <strong>Telefone</strong> {{$clientbilled->TELEFONE}}
