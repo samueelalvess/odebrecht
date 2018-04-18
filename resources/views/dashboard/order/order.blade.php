@@ -120,7 +120,7 @@
                 $total += $valor_prod;
 
                 echo '<tr>
-                              <td>'.$coo[0].'</td>
+                              <td align="left">'.$coo[0].'</td>
                               <td>'.$coo[1].'</td>
                               <td>
 
