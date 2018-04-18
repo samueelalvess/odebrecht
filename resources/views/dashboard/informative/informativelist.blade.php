@@ -31,7 +31,7 @@
               <td>Seja bem-vindo ao novo sistema de pedidos</td>
               <td>05/04/2018</td>
               <td align="center">
-                <a href=""><button class="btn btn-xs btn-warning" style="border-radius:0px"><i class="fa fa-eye"></i> Detalhes</button></a>
+                <a href="{{route('informativeData')}}"><button class="btn btn-xs btn-warning" style="border-radius:0px"><i class="fa fa-eye"></i> Detalhes</button></a>
               </td>
             </tr>
 

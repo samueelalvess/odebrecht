@@ -52,4 +52,8 @@ Route::prefix('/informativos')->group(function () {
   return view('dashboard.informative.informativelist');
 })->name('informativeList');
 
+Route::get('/dados', function () {
+return view('dashboard.informative.informative');
+})->name('informativeData');
+
 });
