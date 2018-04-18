@@ -129,7 +129,7 @@
                               </td>
                              <td align="center">
                                 <div class="input-group">
-                                  <label>R$ '.$coo[4].'</label>
+                                  <label>R$ <span id="total_prod_'.$coo[0].'">'.$coo[4].'</span></label>
                                 </div>
                               </td>
                               <td>
@@ -158,7 +158,7 @@
 
               <div class="col-md-12">
                 <hr>
-                <a href="{{route('checkoutOrder',['id'=>'09D3F95B5D654924A143'])}}"<button class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
+                <a href="{{route('checkoutOrder',['id'=>'09D3F95B5D654924A143'])}}"><button class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
               </div>
 
     </div>
