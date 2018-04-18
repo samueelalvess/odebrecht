@@ -316,7 +316,6 @@
             <th class="col-md-1 text-center">Qtd</th>
             <th class="col-md-2 text-center">Valor Unit.</th>
             <th class="col-md-2 text-center">Valor Total</th>
-            <th></th>
           </thead>
 
           <tbody id="carrinhobody">
@@ -325,42 +324,54 @@
             if (isset($_COOKIE["carrinho"]))
             {
               $cookie = explode('/',$_COOKIE["carrinho"]);
-
+              $total = 0;
               foreach ($cookie as $valor) {
                 $coo = explode(':',$valor);
                 if(!empty($coo[0]))
                 {
+                  $valor_prod = $coo[4];
+                  $valor_prod = str_replace('.','',$valor_prod);
+                  $valor_prod = str_replace(',','.',$valor_prod);
+                  $total += $valor_prod;
                   echo '<tr>
-                                <td>'.$coo[0].'</td>
+                                <td><span name="codigo[]">'.$coo[0].'</span></td>
                                 <td>'.$coo[1].'</td>
                                 <td>
 
-                                    <input type="text" name="quantc[5]" class="form-control input-number" value="'.$coo[2].'" min="1" max="10">
+                                    <span name="quantidade[]">'.$coo[2].'</span>
 
                                 </td>
-                                <td>
+                                <td align="center">
                                   <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon1">R$</span>
-                                    <input type="text" class="form-control" value="'.$coo[3].'">
+                                    R$
+                                    <span name="valor_unitario[]">'.$coo[3].'</span>
                                   </div>
                                 </td>
                                <td align="center">
                                   <div class="input-group">
-                                    <label>R$ '.$coo[4].'</label>
+                                    <span name="valor_total[]">R$ '.$coo[4].'</span>
                                   </div>
                                 </td>
-                                <td>
-                                  <button class="btn btn-danger pull-right" style="border-radius:0px;" onclick="removelinha(this,\''.$coo[0].'\')"><i class="fa fa-trash"></i></button>
-                                </td>
+
                               </tr>';
                 }
 
               }
+
+
             }
 
 
             ?>
           </tbody>
+          <tfoot>
+            <tr>
+                <th colspan="4" class="text-right"><strong><h4>TOTAL</h4></strong></th>
+                <th class="text-center">
+                    <h4>R$ <span id="totaltxt"> <?php if (isset($_COOKIE["carrinho"])) { echo number_format($total,2,',','.'); } else { echo '0,00'; } ?> </span></h4>
+                </th>
+            </tr>
+          </tfoot>
         </table>
 
 

@@ -39,10 +39,10 @@ Route::prefix('/informativos')->group(function () {
 
   Route::get('/lista', function () {
   return view('dashboard.informative.informativelist');
-})->name('informativeList');
+  })->name('informativeList');
 
-Route::get('/dados', function () {
-return view('dashboard.informative.informative');
-})->name('informativeData');
+  Route::get('/dados', function () {
+  return view('dashboard.informative.informative');
+  })->name('informativeData');
 
 });
