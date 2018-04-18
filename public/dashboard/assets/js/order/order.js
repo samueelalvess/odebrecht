@@ -78,13 +78,13 @@ $('.input-number').change(function() {
     if(valueCurrent >= minValue) {
         $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
     } else {
-        alert('Sorry, the minimum value was reached');
+        alert('Desculpe, respeite a quantidade mínima');
         $(this).val($(this).data('oldValue'));
     }
     if(valueCurrent <= maxValue) {
         $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
     } else {
-        alert('Sorry, the maximum value was reached');
+        alert('Desculpa, respeite a quantidade máxima');
         $(this).val($(this).data('oldValue'));
     }
 
@@ -109,7 +109,7 @@ $(".input-number").keydown(function (e) {
 
 // ADICIONAR AO CARRINHO
 function adiciona(cod, desc, qtd, valor, total) {
-
+ 
   {
            $('#carrinhobody').append(
              '<tr>'+
@@ -128,7 +128,7 @@ function adiciona(cod, desc, qtd, valor, total) {
                            '</td>'+
                           '<td align="center">'+
                              '<div class="input-group">'+
-                               '<label>R$ '+total+'</label>'+
+                               '<label>R$ <span id="total_prod_'+cod+'">'+total+'</span></label>'+
                              '</div>'+
                            '</td>'+
                            '<td>'+
@@ -141,12 +141,10 @@ function adiciona(cod, desc, qtd, valor, total) {
    var v1 = $('#totaltxt').text();
    totall = total;
 
-   totaltxt = v1.replace('.','');
-   totaltxt = v1.replace(',','.');
+   totaltxt = moedaamericana(v1);
+   total_result = moedaamericana(totall);
 
-   total = totall.replace('.','');
-   total = totall.replace(',','.');
-   var somar = parseFloat(totaltxt) + parseFloat(total);
+   var somar = parseFloat(totaltxt) + parseFloat(total_result);
    var somar = somar.toLocaleString("pt-BR", formato);
    $('#totaltxt').text(somar);
    var item = cod+':'+desc+':'+qtd+':'+valor+':'+total+'/';
@@ -156,6 +154,11 @@ function adiciona(cod, desc, qtd, valor, total) {
 
 }
 
+function moedaamericana(valor) {
+  moeda = valor.replace('.','');
+  moeda = moeda.replace(',','.');
+  return moeda;
+}
 
 function getCookie(cname) {
     var name = cname + "=";
@@ -181,6 +184,9 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 function removelinha(obj,cod) {
+
+  subtrai(obj,cod);
+
   var cookie = getCookie('carrinho');
   cookie = cookie.split('/');
   var item_remove = '';
@@ -220,13 +226,32 @@ function multiplica(v1,v2)
 
 }
 
+function subtrai(obj,cod){
+
+  var formato = { minimumFractionDigits: 2 }
+  var prod = $('#total_prod_'+cod).text();
+  total_pedido = $('#totaltxt').text();;
+
+  total_prod = moedaamericana(prod);
+  total_span = moedaamericana(total_pedido);
+
+  var remov = parseFloat(total_span) - parseFloat(total_prod);
+  var remov = remov.toLocaleString("pt-BR", formato);
+  $('#totaltxt').text(remov);
+
+}
+
 $(function(){
     $(document).on('click', '.btncarrinho', function(e) {
+
         e.preventDefault;
         var cod = $(this).closest('tr').find('td[data-cod]').data('cod');
         var desc = $(this).closest('tr').find('td[data-desc]').data('desc');
         var qtd = $('#qtd-'+cod).val();
         var valor = $('#valor-'+cod).val();
+
+        if($('#total_prod_'+cod).text() == '') {
+
         if(qtd > 1) {
         total = multiplica(qtd,valor);
         } else {
@@ -247,7 +272,10 @@ $(function(){
             //
 
         } else {
-          swal("Alerta", "Por favor, preencha o valor do produto!", "warning")
+          swal("Alerta", "Por favor, preencha o valor do produto!", "warning");
         }
+      } else {
+        swal("Alerta", "Este item já está no carrinho!", "warning");
+      }
     });
 });

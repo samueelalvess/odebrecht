@@ -57,7 +57,7 @@
                                 <span class="glyphicon glyphicon-minus"></span>
                             </button>
                         </span>
-                            <input type="text" id="qtd-{{trim($product->D04_001_C)}}" name="quant[{{$product->D04_001_C}}]" class="form-control input-number" value="1" min="1" max="10">
+                            <input type="text" id="qtd-{{trim($product->D04_001_C)}}" name="quant[{{$product->D04_001_C}}]" class="form-control input-number" value="1" min="1" max="99999999">
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[{{$product->D04_001_C}}]">
                                 <span class="glyphicon glyphicon-plus"></span>
@@ -108,17 +108,23 @@
           if (isset($_COOKIE["carrinho"]))
           {
             $cookie = explode('/',$_COOKIE["carrinho"]);
-
+            $total = 0;
             foreach ($cookie as $valor) {
               $coo = explode(':',$valor);
+
               if(!empty($coo[0]))
               {
+                $valor_prod = $coo[4];
+                $valor_prod = str_replace('.','',$valor_prod);
+                $valor_prod = str_replace(',','.',$valor_prod);
+                $total += $valor_prod;
+
                 echo '<tr>
                               <td>'.$coo[0].'</td>
                               <td>'.$coo[1].'</td>
                               <td>
 
-                                  <input type="text" name="quantc[5]" class="form-control input-number" value="'.$coo[2].'" min="1" max="10">
+                                  <input type="text" name="quantc[5]" class="form-control input-number" value="'.$coo[2].'" min="1" max="99999999">
 
                               </td>
                               <td>
@@ -129,7 +135,7 @@
                               </td>
                              <td align="center">
                                 <div class="input-group">
-                                  <label>R$ '.$coo[4].'</label>
+                                  <label>R$ <span id="total_prod_'.$coo[0].'">'.$coo[4].'</span></label>
                                 </div>
                               </td>
                               <td>
@@ -147,7 +153,7 @@
             <tr>
                 <th colspan="4" class="text-right"><strong><h4>TOTAL</h4></strong></th>
                 <th class="text-center">
-                    <h4>R$ <span id="totaltxt"> 0,00 </span></h4>
+                    <h4>R$ <span id="totaltxt"> <?php if (isset($_COOKIE["carrinho"])) { echo number_format($total,2,',','.'); } else { echo '0,00'; } ?> </span></h4>
                 </th>
             </tr>
           </tfoot>
@@ -158,7 +164,7 @@
 
               <div class="col-md-12">
                 <hr>
-                <a href="{{route('checkoutOrder',['id'=>'09D3F95B5D654924A143'])}}"<button class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
+                <a href="{{route('checkoutOrder',['id'=>'09D3F95B5D654924A143'])}}"><button class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
               </div>
 
     </div>
