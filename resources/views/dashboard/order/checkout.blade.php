@@ -334,22 +334,26 @@
                   $valor_prod = str_replace(',','.',$valor_prod);
                   $total += $valor_prod;
                   echo '<tr>
-                                <td><span name="codigo[]">'.$coo[0].'</span></td>
+                                <td><span name="codigo[]">'.$coo[0].'</span>
+                                <input type="hidden" name="codigo[]" value="'.$coo[0].'">
+                                </td>
                                 <td>'.$coo[1].'</td>
                                 <td>
 
                                     <span name="quantidade[]">'.$coo[2].'</span>
-
+                                    <input type="hidden" name="quantidade[]" value="'.$coo[2].'">
                                 </td>
                                 <td align="center">
                                   <div class="input-group">
                                     R$
                                     <span name="valor_unitario[]">'.$coo[3].'</span>
+                                    <input type="hidden" name="valor_unitario[]" value="'.$coo[3].'">
                                   </div>
                                 </td>
                                <td align="center">
                                   <div class="input-group">
                                     <span name="valor_total[]">R$ '.$coo[4].'</span>
+                                    <input type="hidden" name="valor_total[]" value="'.$coo[4].'">
                                   </div>
                                 </td>
 
