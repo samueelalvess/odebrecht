@@ -109,7 +109,7 @@ $(".input-number").keydown(function (e) {
 
 // ADICIONAR AO CARRINHO
 function adiciona(cod, desc, qtd, valor, total) {
-
+ 
   {
            $('#carrinhobody').append(
              '<tr>'+
