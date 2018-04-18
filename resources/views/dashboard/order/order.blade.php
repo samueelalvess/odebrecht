@@ -57,7 +57,7 @@
                                 <span class="glyphicon glyphicon-minus"></span>
                             </button>
                         </span>
-                            <input type="text" id="qtd-{{trim($product->D04_001_C)}}" name="quant[{{$product->D04_001_C}}]" class="form-control input-number" value="1" min="1" max="10">
+                            <input type="text" id="qtd-{{trim($product->D04_001_C)}}" name="quant[{{$product->D04_001_C}}]" class="form-control input-number" value="1" min="1" max="99999999">
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[{{$product->D04_001_C}}]">
                                 <span class="glyphicon glyphicon-plus"></span>
@@ -118,7 +118,7 @@
                               <td>'.$coo[1].'</td>
                               <td>
 
-                                  <input type="text" name="quantc[5]" class="form-control input-number" value="'.$coo[2].'" min="1" max="10">
+                                  <input type="text" name="quantc[5]" class="form-control input-number" value="'.$coo[2].'" min="1" max="99999999">
 
                               </td>
                               <td>
