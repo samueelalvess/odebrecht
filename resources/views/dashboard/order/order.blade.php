@@ -108,11 +108,17 @@
           if (isset($_COOKIE["carrinho"]))
           {
             $cookie = explode('/',$_COOKIE["carrinho"]);
-
+            $total = 0;
             foreach ($cookie as $valor) {
               $coo = explode(':',$valor);
+
               if(!empty($coo[0]))
               {
+                $valor_prod = $coo[4];
+                $valor_prod = str_replace('.','',$valor_prod);
+                $valor_prod = str_replace(',','.',$valor_prod);
+                $total += $valor_prod;
+
                 echo '<tr>
                               <td>'.$coo[0].'</td>
                               <td>'.$coo[1].'</td>
@@ -147,7 +153,7 @@
             <tr>
                 <th colspan="4" class="text-right"><strong><h4>TOTAL</h4></strong></th>
                 <th class="text-center">
-                    <h4>R$ <span id="totaltxt"> 0,00 </span></h4>
+                    <h4>R$ <span id="totaltxt"> <?php if (isset($_COOKIE["carrinho"])) { echo number_format($total,2,',','.'); } else { echo '0,00'; } ?> </span></h4>
                 </th>
             </tr>
           </tfoot>
