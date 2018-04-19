@@ -32,6 +32,19 @@ $(document).ready(function() {
       $('.valor').maskMoney();
 } ); // -> DOCUMENT READY
 
+$('.selectpicker').change(function () {
+// cliente selecionado no combo de cliente
+var clientecombo = $(this).find("option:selected").val();
+alert(clientecombo);
+// libera o botão "continuar" ou desabilita
+if(clientecombo != '-- Informe o cliente que você deseja realizar o pedido --') {
+  $("#div_alerta").hide(100);
+  $("#btn_continuar").prop( "disabled", false );
+} else {
+  $("#div_alerta").show(100);
+  $("#btn_continuar").prop( "disabled", true );
+}
+});
 
 // INICIA ADICIONAR E REMOVER QUANTIDADE
 $('.btn-number').click(function(e){
@@ -109,7 +122,7 @@ $(".input-number").keydown(function (e) {
 
 // ADICIONAR AO CARRINHO
 function adiciona(cod, desc, qtd, valor, total) {
- 
+
   {
            $('#carrinhobody').append(
              '<tr>'+
