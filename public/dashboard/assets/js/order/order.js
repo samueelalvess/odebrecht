@@ -109,8 +109,6 @@ $(".input-number").keydown(function (e) {
 
 // ADICIONAR AO CARRINHO
 function adiciona(cod, desc, qtd, valor, total) {
- 
-  {
            $('#carrinhobody').append(
              '<tr>'+
                            '<td>'+cod+'</td>'+
@@ -136,7 +134,7 @@ function adiciona(cod, desc, qtd, valor, total) {
                           ' </td>'+
                          '</tr>');
 
-   }
+
    var formato = { minimumFractionDigits: 2 }
    var v1 = $('#totaltxt').text();
    totall = total;
@@ -265,7 +263,6 @@ $(function(){
                 type: 'success',
                 timer: 1000
             });
-
             // adiciona a tabela
           adiciona(cod.trim(), desc.trim(), qtd.trim(), valor.trim(), total);
 

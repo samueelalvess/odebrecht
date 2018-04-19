@@ -10,7 +10,7 @@ class Product extends Model
 
     public function getProductAll()
     {
-      $data = $this->select('D04_001_C','D04_002_C')
+      $data = $this->select('D04.UKEY','D04_001_C','D04_002_C')
                    ->leftJoin('D17','D04.D17_UKEY','=','D17.UKEY')
                    ->leftJoin('D03','D04.D03_UKEY','=','D03.UKEY')
                    ->where('D04.D04_039_N',0)

@@ -48,7 +48,7 @@
           <tbody>
             @foreach($products as $product)
                 <tr>
-                  <td data-cod="{{$product->D04_001_C}}">{{$product->D04_001_C}}</td>
+                  <td data-cod="{{$product->UKEY}}">{{$product->UKEY}}</td>
                   <td data-desc="{{$product->D04_002_C}}">{{$product->D04_002_C}}</td>
                   <td>
                     <div class="input-group">
@@ -57,7 +57,7 @@
                                 <span class="glyphicon glyphicon-minus"></span>
                             </button>
                         </span>
-                            <input type="text" id="qtd-{{trim($product->D04_001_C)}}" name="quant[{{$product->D04_001_C}}]" class="form-control input-number" value="1" min="1" max="99999999">
+                            <input type="text" id="qtd-{{trim($product->UKEY)}}" name="quant[{{$product->D04_001_C}}]" class="form-control input-number" value="1" min="1" max="99999999">
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[{{$product->D04_001_C}}]">
                                 <span class="glyphicon glyphicon-plus"></span>
@@ -68,7 +68,7 @@
                   <td>
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">R$</span>
-                      <input type="text" id="valor-{{trim($product->D04_001_C)}}" class="form-control valor" data-symbol="R$ " data-thousands="." data-decimal="," placeholder="0,00">
+                      <input type="text" id="valor-{{trim($product->UKEY)}}" class="form-control valor" data-symbol="R$ " data-thousands="." data-decimal="," placeholder="0,00">
                     </div>
                   </td>
                   <td>

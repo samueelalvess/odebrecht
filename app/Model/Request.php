@@ -32,14 +32,12 @@ class Request extends Model
 
     public function setRequest($data)
     {
-      $timestamp = $this->getDate();
-      echo $timestamp;
       $valor = $this->getNumeric();
-      $valor++;
       $valor = trim($valor);
+      $valor++;
+      $valor = $valor;
       $valor = str_pad( $valor, 9, '0', STR_PAD_LEFT );
       $ukey = 'W8-WEB-'.$valor;
-
 
       $pe = \DB::insert("insert into [JJ20] (
                                               [JJ20_001_C],
@@ -97,10 +95,56 @@ class Request extends Model
                                   getdate(),
                                   getdate(),
                                   0,
-                                  getdatess()
+                                  getdate()
                                 )");
 
+        if ( $pe )
+          {
+            foreach ($data->codigo as $key => $codigo)
+            {
+              $ukey_i = bcrypt(now());
+              $ukey_i = substr($ukey_i,0,20);
+              
+              $pei = \DB::insert("INSERT INTO [jj21] (
+                                                      [CIA_UKEY],
+                                                      [D04_UKEY],
+                                                      [JJ20_UKEY],
+                                                      [JJ21_001_B],
+                                                      [JJ21_002_B],
+                                                      [JJ21_003_B],
+                                                      [JJ21_004_B],
+                                                      [JJ21_005_N],
+                                                      [JJ21_006_B],
+                                                      [JJ21_007_B],
+                                                      [JJ21_008_B],
+                                                      [JJ21_UKEY],
+                                                      [SQLCMD],
+                                                      [TIMESTAMP],
+                                                      [UKEY]
+                                                    )
+                                 VALUES(
+                                          '".$data->filial."',
+                                          '".$codigo."',
+                                          '".$ukey."',
+                                          ".$data->quantidade[$key].",
+                                          ".$this->getmoeda($data->valor_unitario[$key]).",
+                                          ".$this->getmoeda($data->valor_total[$key]).",
+                                          0,
+                                          0,
+                                          ".$this->getmoeda($data->valor_unitario[$key]).",
+                                          0,
+                                          '0',
+                                          '".$ukey_i."',
+                                          '',
+                                          getdate(),
+                                          '".$ukey_i."'
+                                        )
+                                 ");
+              }
+          }
 
+
+      return true;
 
     }
 
@@ -109,10 +153,11 @@ class Request extends Model
       return $this->select('JJ20_001_C')
                    ->max('JJ20_001_C');
     }
-    public function getDate()
+    public function getmoeda($valor)
     {
-      $data_ = \DB::select('select getdate() as data');
-      return $data_[0]->data;
+      $valor = str_replace('.','',$valor);
+      $valor = str_replace(',','.',$valor);
+      return $valor;
     }
 
 }
