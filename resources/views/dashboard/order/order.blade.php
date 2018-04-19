@@ -25,7 +25,7 @@
           <select class="selectpicker form-control" data-live-search="true">
             <option> -- Informe o cliente que você deseja realizar o pedido -- </option>
             @foreach($clients as $client)
-              <option data-tokens="{{$client->A03_002_C}}">{{$client->UKEY}} - {{$client->A03_002_C}}</option>
+              <option data-tokens="{{$client->UKEY}} {{$client->A03_002_C}}">{{$client->UKEY}} - {{$client->A03_002_C}}</option>
             @endforeach
           </select>
           <hr>
@@ -120,7 +120,7 @@
                 $total += $valor_prod;
 
                 echo '<tr>
-                              <td>'.$coo[0].'</td>
+                              <td align="left">'.$coo[0].'</td>
                               <td>'.$coo[1].'</td>
                               <td>
 
@@ -164,7 +164,10 @@
 
               <div class="col-md-12">
                 <hr>
-                <a href="{{route('checkoutOrder',['id'=>'09D3F95B5D654924A143'])}}"><button class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
+                <a href="{{route('checkoutOrder',['id'=>'09D3F95B5D654924A143'])}}"><button id="btn_continuar" disabled class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
+              </div>
+              <div class="col-md-12" id="div_alerta">
+                <span class="pull-right"><small style="color:red">*Informe o cliente para prosseguir com o pedido.</small></span>
               </div>
 
     </div>

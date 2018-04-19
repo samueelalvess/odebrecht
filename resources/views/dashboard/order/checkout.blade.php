@@ -334,7 +334,7 @@
                   $valor_prod = str_replace(',','.',$valor_prod);
                   $total += $valor_prod;
                   echo '<tr>
-                                <td><span name="codigo[]">'.$coo[0].'</span>
+                                <td align="left"><span name="codigo[]">'.$coo[0].'</span>
                                 <input type="hidden" name="codigo[]" value="'.$coo[0].'">
                                 </td>
                                 <td>'.$coo[1].'</td>
