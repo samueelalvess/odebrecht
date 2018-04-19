@@ -35,7 +35,7 @@ $(document).ready(function() {
 $('.selectpicker').change(function () {
 // cliente selecionado no combo de cliente
 var clientecombo = $(this).find("option:selected").val();
-alert(clientecombo);
+setCookie('cliente',clientecombo,'1');
 // libera o botão "continuar" ou desabilita
 if(clientecombo != '-- Informe o cliente que você deseja realizar o pedido --') {
   $("#div_alerta").hide(100);
@@ -122,11 +122,6 @@ $(".input-number").keydown(function (e) {
 
 // ADICIONAR AO CARRINHO
 function adiciona(cod, desc, qtd, valor, total) {
-<<<<<<< HEAD
-=======
-
-  {
->>>>>>> 1e8f98806fc55efd93bde605d879a9f8ac098aad
            $('#carrinhobody').append(
              '<tr>'+
                            '<td>'+cod+'</td>'+
