@@ -13,10 +13,11 @@
     <div class="x_panel">
       <div class="x_title">
         <h2>Informativos</h2>
+        <a href="{{route('informativeNew')}}"><button class="btn btn-success btn-sm pull-right" style="border-radius:0px;"><i class="fa fa-plus"></i> Novo Informativo</button></a>
         <div class="clearfix"></div>
       </div>
-
       <div class="x_content">
+        <hr>
         <table class="table table-responsive table-striped table-hover" id="informativeList">
           <thead>
             <th>#</th>
@@ -32,6 +33,7 @@
               <td>05/04/2018</td>
               <td align="center">
                 <a href="{{route('informativeData')}}"><button class="btn btn-xs btn-warning" style="border-radius:0px"><i class="fa fa-eye"></i> Detalhes</button></a>
+                <a href="{{route('informativeEdit')}}"><button class="btn btn-xs btn-info" style="border-radius:0px"><i class="fa fa-pencil"></i> Editar</button></a>
               </td>
             </tr>
 
