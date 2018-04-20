@@ -33,8 +33,8 @@
                 <td>{{$data->NOTA}}</td>
                 <td>{{$data->NOME_CLIENTE}}</td>
                 <td>{{$data->NOME_TRANSP}}</td>
-                <td>{{$data->EMISSAO_PEDIDO}}</td>
-                <td>{{$data->EMISSAO_NOTA}}</td>
+                <td>{{date('d/m/Y', strtotime($data->EMISSAO_PEDIDO))}}</td>
+                <td>{{date('d/m/Y', strtotime($data->EMISSAO_NOTA))}}</td>
               </tr>
             @endforeach
 
