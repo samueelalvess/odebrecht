@@ -60,14 +60,16 @@
           </thead>
           <tbody>
 
-            <tr>
-              <td>02-2018-W000047501</td>
-              <td>000057633</td>
-              <td>COM BOM DE ALIMENTOS LTDA</td>
-              <td>EXPRESSO JUNDIAI LOGISTICA E TRANSPORTE LTDA</td>
-              <td>29/03/2018</td>
-              <td>05/04/2018</td>
-            </tr>
+            @foreach($rpbilled as $data)
+              <tr>
+                <td>{{$data->PEDIDO}}</td>
+                <td>{{$data->NOTA}}</td>
+                <td>{{$data->NOME_CLIENTE}}</td>
+                <td>{{$data->NOME_TRANSP}}</td>
+                <td>{{$data->EMISSAO_PEDIDO}}</td>
+                <td>{{$data->EMISSAO_NOTA}}</td>
+              </tr>
+            @endforeach
 
           </tbody>
         </table>

@@ -10,6 +10,7 @@ use App\Model\Branch;
 use App\Model\Document;
 use App\Model\Payment;
 use App\Model\Billed;
+use App\Model\ReportBilled;
 
 class RequestController extends Controller
 {
@@ -22,16 +23,6 @@ class RequestController extends Controller
       $this->product = $pro;
     }
 
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
       $clients = $this->client->getClientAllBasic();
@@ -49,44 +40,7 @@ class RequestController extends Controller
 
     }
 
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
     public function checkout(Branch $br,Document $doc,Billed $bi,Payment $pay,Client $cli,$ukey_client)
     {
       $branchall = $br->getBranchAll();
@@ -105,5 +59,16 @@ class RequestController extends Controller
                                                 'delivery'=>$clideli
                                               ]
                   );
+    }
+
+    public function reportBilled(ReportBilled $rpbilled)
+    {
+      $reportebilled = $rpbilled->getReportBilled();
+      return view('dashboard.order.billedorderslist',['rpbilled'=>$reportebilled]);
+    }
+    public function reportNotBilled(ReportBilled $rpbilled)
+    {
+      $reportebilled = $rpbilled->getReportNotBilled(1);
+      return view('dashboard.order.notbilledorderslist',['rpbilled'=>$reportebilled]);
     }
 }

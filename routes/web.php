@@ -26,13 +26,8 @@ Route::prefix('/pedidos')->group(function () {
   Route::get('/{id}/finalizar','Dashboard\RequestController@checkout')->name('checkoutOrder');
   Route::post('/finalizado','Dashboard\RequestController@store')->name('finalizarTESTE');
 
-  Route::get('/faturados', function () {
-  return view('dashboard.order.billedorderslist');
-  })->name('billedList');
-
-  Route::get('/naofaturados', function () {
-  return view('dashboard.order.notbilledorderslist');
-  })->name('notbilledList');
+  Route::get('/faturados', 'Dashboard\RequestController@reportBilled')->name('billedList');
+  Route::get('/naofaturados', 'Dashboard\RequestController@reportNotBilled')->name('notbilledList');
 
 });
 
