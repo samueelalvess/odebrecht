@@ -25,7 +25,7 @@
 
         <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
           <label>Título Informativo</label>
-          <input type="text" required name="tituloinformativo" class="form-control has-feedback-left" value="@if(!empty($informative)){{$informative->A33_002_C}}@endif" placeholder="Título Informativo">
+          <input type="text" required name="titulo" class="form-control has-feedback-left" value="@if(!empty($informative)){{$informative->A33_002_C}}@endif" placeholder="Título Informativo">
           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
         </div>
 
@@ -34,6 +34,10 @@
           <textarea name="descricao" required>
             @if(!empty($informative)){{$informative->A33_002_C}}@endif
           </textarea>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+          <label>expiracao</label>
+          <input type="date" name="dataexpiracao">
         </div>
 
         <div class="form-group"></div>

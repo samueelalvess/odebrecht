@@ -45,6 +45,8 @@ Route::prefix('/informativos')->group(function () {
   return view('dashboard.informative.newinformative');
   })->name('informativeNew');
 
+  Route::post('/store','Dashboard\InformativeController@store')->name('informativeStore');
+
   Route::get('/editar', function () {
   return view('dashboard.informative.newinformative');
   })->name('informativeEdit');
