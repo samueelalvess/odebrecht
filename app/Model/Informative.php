@@ -12,7 +12,7 @@ class Informative extends Model
 
     public function setInformative($data)
     {
-      $info = \DB::insert("INSRT INTO [informativo] ([titulo],[texto],[data_criado],[data_expiracao])
+      $info = \DB::insert("INSERT INTO [informativo] ([titulo],[texto],[data_criado],[data_expiracao])
                         VALUES ('".$data->titulo."','".$data->descricao."',getdate(),'".$data->dataexpiracao."')");
       return $info;
     }

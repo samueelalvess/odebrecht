@@ -26,16 +26,17 @@
             <th class="col-md-2 text-center"><i class="fa fa-cogs"></i></th>
           </thead>
           <tbody>
-
+            @foreach($informatives as $info)
             <tr>
-              <td>1</td>
-              <td>Seja bem-vindo ao novo sistema de pedidos</td>
-              <td>05/04/2018</td>
+              <td>{{$info->codigo}}</td>
+              <td>{{$info->titulo}}</td>
+              <td>{{$info->data_criado}}</td>
               <td align="center">
                 <a href="{{route('informativeData')}}"><button class="btn btn-xs btn-warning" style="border-radius:0px"><i class="fa fa-eye"></i> Detalhes</button></a>
                 <a href="{{route('informativeEdit')}}"><button class="btn btn-xs btn-info" style="border-radius:0px"><i class="fa fa-pencil"></i> Editar</button></a>
               </td>
             </tr>
+            @endforeach
 
           </tbody>
         </table>

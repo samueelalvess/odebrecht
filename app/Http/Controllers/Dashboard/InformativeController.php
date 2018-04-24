@@ -16,11 +16,11 @@ class InformativeController extends Controller
     {
       $this->inf = $infor;
     }
-    
+
     public function index()
     {
       $informatives = $this->inf->getInformativeAll();
-      return view('',compact('informatives'));
+      return view('dashboard.informative.informativelist',compact('informatives'));
     }
 
     public function store(InformativeFormResquest $request)
@@ -41,7 +41,7 @@ class InformativeController extends Controller
     public function edit($id)
     {
       $informative = $this->inf->getInformativeId($id);
-      return view('',compact('informative'));
+      return view('dashboard.informative.newinformative',compact('informative'));
     }
 
     public function update(InformativeFormResquest $request, $id)
