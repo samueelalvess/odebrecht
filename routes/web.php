@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', function () {
-    return view('dashboard.base');
+    return view('dashboard.dashboard');
 })->name('home');
 
 Route::prefix('/clientes')->group(function () {

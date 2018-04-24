@@ -13,7 +13,7 @@
       </div>
       <div class="profile_info">
         <span>Bem-vindo,</span>
-        <h2>Samuel</h2>
+        <h2>Samuel Alves</h2>
       </div>
       <div class="clearfix"></div>
     </div>
