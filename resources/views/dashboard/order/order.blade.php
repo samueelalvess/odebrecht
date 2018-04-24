@@ -21,11 +21,12 @@
 
       <div class="x_content">
 
-          <h2>Cliente <?php if(isset($_COOKIE["cliente"])) echo $_COOKIE["cliente"]; ?></h2>
+          <h2>Cliente</h2>
           <select class="selectpicker form-control" data-live-search="true">
             <option> -- Informe o cliente que você deseja realizar o pedido -- </option>
             @foreach($clients as $client)
-              <option data-tokens="{{$client->UKEY}} {{$client->A03_002_C}}">{{$client->UKEY}} - {{$client->A03_002_C}}</option>
+            <?php $clienteblade = $client['UKEY'].' - '.$client['A03_002_C']; ?>
+              <option data-tokens="{{$client->UKEY}} {{$client->A03_002_C}}" <?php if(isset($_COOKIE["cliente"]) && trim($_COOKIE["cliente"]) == trim($clienteblade)) echo 'selected'; ?>>{{$client->UKEY}} - {{$client->A03_002_C}}</option>
             @endforeach
           </select>
           <hr>
