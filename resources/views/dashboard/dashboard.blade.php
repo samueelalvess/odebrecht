@@ -14,7 +14,9 @@
 
         <div class="x_title">
           <div class="col-md-9">
-          <h2>Evolutivo Mensal de Faturamento Pessoal <small>2018</small></h2>
+          <h2>Evolutivo Mensal de Faturamento Pessoal
+            <small><em>Ano <label>2018 </label> | Vendedor: <label>Samuel Alves</label> </em></small>
+          </h2>
           </div>
           <div class="col-md-3 form-inline">
           <span class="pull-right">Ano:
@@ -41,7 +43,7 @@
 
           <div class="x_title">
             <div class="col-md-12">
-            <h2>Top 10 Clientes <small>Abril</small></h2>
+            <h2>Top 10 Clientes <small><em>(Mês atual)</em></small></h2>
             </div>
             <div class="clearfix"></div>
           </div>
@@ -86,7 +88,7 @@
 
           <div class="x_title">
             <div class="col-md-12">
-            <h2>Top 10 Produtos <small>Abril</small></h2>
+            <h2>Top 10 Produtos <small><em>(Mês atual)</em></small></h2>
             </div>
             <div class="clearfix"></div>
           </div>
