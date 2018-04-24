@@ -31,7 +31,7 @@
         </div>
 
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <canvas id="evolutivo"></canvas>
+          <canvas id="evolutivo" style="position: relative; height:40vh; width:80vw"></canvas>
         </div>
 
         <div class="clearfix"></div>
