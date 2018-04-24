@@ -36,7 +36,7 @@ class Client extends Model
                            'A03_017_C','A03_012_C','A03_014_C','A03_015_C','A03_016_C','A03_009_C','A03_010_C',
                            'A33_UKEY','A24_001_C')
                   ->leftJoin('A24', 'A03.A24_UKEY', '=', 'A24.UKEY')
-                  ->Where('A03_001_C',$id)
+                  ->Where('A03.UKEY',$id)
                   ->Where('ARRAY_003','1')
                   ->Where('A33_UKEY','7CB0A0344D4C414E95CC')  // chave do vendedor!!
                   ->first();

@@ -29,5 +29,9 @@ class Seller extends Model
                 ->where('A33_001_C',$id)
                 ->first();
   }
+  public function setSellerUpdate($data,$id)
+  {
+    //update vendedor
+  }
 
 }
