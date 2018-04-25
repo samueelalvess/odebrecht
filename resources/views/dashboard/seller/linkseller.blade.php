@@ -25,7 +25,7 @@
 
         <div class="col-md-12 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Nome Vendedor</label>
-          <input type="text" required class="form-control has-feedback-left" value="Samuel Alves da Silva">
+          <input type="text" required class="form-control has-feedback-left" value="@if(!empty($seller)){{$seller->A33_002_C}}@endif">
           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
         </div>
 

@@ -31,14 +31,14 @@
         </div>
 
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <canvas id="evolutivo" style="position: relative; height:40vh; width:80vw"></canvas>
+          <canvas id="evolutivo" style="position: relative; height:40vh; width:80vw" class="hidden-xs"></canvas>
         </div>
 
         <div class="clearfix"></div>
       </div>
     </div>
 
-    <div class="col-md-6 col-sm-6 col-xs-6">
+    <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="x_panel">
 
           <div class="x_title">
@@ -83,7 +83,7 @@
         </div>
     </div>
 
-    <div class="col-md-6 col-sm-6 col-xs-6">
+    <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="x_panel">
 
           <div class="x_title">
