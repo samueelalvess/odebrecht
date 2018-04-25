@@ -26,11 +26,10 @@ class InformativeController extends Controller
     public function store(Request $request)
     {
       $informative = $this->inf->setInformative($request);
-      dd($informative);
       if ( $informative )
-          redirect()->route('informativeList');
+          return redirect()->route('informativeList');
       else
-          redirect()->back();
+          return redirect()->back();
     }
 
     public function show($id)
@@ -48,10 +47,10 @@ class InformativeController extends Controller
     public function update(InformativeFormResquest $request, $id)
     {
       $informative = $this->inf->setInformativeUpdate($request,$id);
-      if ( $infomative )
-          redirect()->route('informativeList');
+      if ( $informative )
+          return redirect()->route('informativeList');
       else
-          redirect()->back();
+          return redirect()->back();
     }
 
 
