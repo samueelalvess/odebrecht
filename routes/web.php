@@ -4,6 +4,10 @@ Route::get('/', function () {
     return view('dashboard.dashboard');
 })->name('home');
 
+Route::get('/entrar', function () {
+    return view('dashboard.login');
+})->name('login');
+
 Route::prefix('/clientes')->group(function () {
 
     Route::get('/lista', 'Dashboard\ClientController@index')->name('clientList');
