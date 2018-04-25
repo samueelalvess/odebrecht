@@ -23,10 +23,11 @@ class InformativeController extends Controller
       return view('dashboard.informative.informativelist',compact('informatives'));
     }
 
-    public function store(InformativeFormResquest $request)
+    public function store(Request $request)
     {
       $informative = $this->inf->setInformative($request);
-      if ( $infomative )
+      dd($informative);
+      if ( $informative )
           redirect()->route('informativeList');
       else
           redirect()->back();
