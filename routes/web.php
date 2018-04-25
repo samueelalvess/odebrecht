@@ -18,6 +18,14 @@ Route::prefix('/vendedores')->group(function () {
 
     Route::get('/{id}/dadosvendedor','Dashboard\SellerController@edit')->name('sellerData');
 
+    Route::get('/vincular', function () {
+    return view('dashboard.seller.linkseller');
+    })->name('linkSeller');
+
+    Route::get('/{id}/edit','Dashboard\SellerController@edit')->name('linksellerEdit');
+    Route::post('/salva','Dashboard\SellerController@store')->name('linksellerStore');
+    Route::put('/{id}/update','Dashboard\SellerController@update')->name('linksellerUpdate');
+
 });
 
 Route::prefix('/pedidos')->group(function () {
