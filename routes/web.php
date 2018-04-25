@@ -18,7 +18,7 @@ Route::prefix('/vendedores')->group(function () {
 
     Route::get('/{id}/dadosvendedor','Dashboard\SellerController@edit')->name('sellerData');
 
-    Route::get('/vincular', function () {
+    Route::get('/{id}/vincular', function () {
     return view('dashboard.seller.linkseller');
     })->name('linkSeller');
 
