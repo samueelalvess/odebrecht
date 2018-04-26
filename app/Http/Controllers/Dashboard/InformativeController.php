@@ -44,7 +44,7 @@ class InformativeController extends Controller
       return view('dashboard.informative.newinformative',compact('informative'));
     }
 
-    public function update(Resquest $request, $id)
+    public function update(Request $request, $id)
     {
       $informative = $this->inf->setInformativeUpdate($request,$id);
       if ( $informative )

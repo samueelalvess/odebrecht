@@ -24,7 +24,6 @@ class Informative extends Model
     {
       $informative = $this->find($id);
       $data = $data->except('_token');
-      $data = $data->except('data_criado');
       return $informative->update($data);
     }
     public function getInformativeAll()
