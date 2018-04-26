@@ -32,6 +32,7 @@ class Request extends Model
 
     public function setRequest($data)
     {
+      $ukey = auth()->user()->ukey;
       $valor = $this->getNumeric();
       $valor = trim($valor);
       $valor++;
@@ -73,7 +74,7 @@ class Request extends Model
                                   '09D3F95B5D654924A143',
                                   '".$data->prazopagamento."',
                                   '".$data->tipodocumento."',
-                                  '7CB0A0344D4C414E95CC',
+                                  '".$ukey."',
                                   '".$data->filial."',
                                   '".$data->tipofrete."',
                                   1.00,

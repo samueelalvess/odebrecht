@@ -2,7 +2,6 @@
 
 namespace App\Model;
 
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use App\Model\ClientDelivery;
@@ -18,7 +17,7 @@ class Client extends Model
                   ->Join('A24', 'A25.A24_UKEY', '=', 'A24.UKEY')
                   ->Join('A23', 'A24.A23_UKEY', '=', 'A23.UKEY')
                   ->Where('ARRAY_003','1')
-                  ->Where('A33_UKEY','7CB0A0344D4C414E95CC')
+                  ->Where('A33_UKEY',auth()->user()->ukey)
                   ->get();
     }
 
@@ -26,7 +25,7 @@ class Client extends Model
     {
       return $this->select('A03.UKEY','A03_001_C','A03_002_C','A03_003_C','ARRAY_009','UKEY')
                   ->Where('ARRAY_003','1')
-                  ->Where('A33_UKEY','7CB0A0344D4C414E95CC')
+                  ->Where('A33_UKEY',auth()->user()->ukey)
                   ->get();
     }
 
@@ -38,7 +37,7 @@ class Client extends Model
                   ->leftJoin('A24', 'A03.A24_UKEY', '=', 'A24.UKEY')
                   ->Where('A03.UKEY',$id)
                   ->Where('ARRAY_003','1')
-                  ->Where('A33_UKEY','7CB0A0344D4C414E95CC')  // chave do vendedor!!
+                  ->Where('A33_UKEY',auth()->user()->ukey)  // chave do vendedor!!
                   ->first();
     }
     public function getClientBilled($id)

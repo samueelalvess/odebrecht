@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class SellerController extends Controller
 {
+
     private $seller;
 
     public function __construct(Seller $sel)
@@ -51,9 +52,10 @@ class SellerController extends Controller
       else
         return redirect()->back();
     }
+
     public function login(Request $request)
     {
-      if (Auth::attempt(['email' => $request->email, 'password' => $request->password],true)) {
+      if ( Auth::attempt(['email' => $request->email, 'password' => $request->password]) ) {
             return redirect()->route('home');
         }else{
            return redirect()->route('logar');
@@ -67,5 +69,6 @@ class SellerController extends Controller
         return redirect()->back();
 
     }
+
 
 }
