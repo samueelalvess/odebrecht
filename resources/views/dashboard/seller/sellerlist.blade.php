@@ -48,7 +48,7 @@
                 @if (empty($sellers->id))
                 <a href="{{ route('linkSeller', ['id' => trim($sellers->UKEY)]) }}"><button class="btn btn-xs btn-success" style="border-radius:0px" title="Vincular"><i class="fa fa-exchange"></i> </button></a>
                 @else
-                <a href="{{ route('linkSeller', ['id' => trim($sellers->A33_001_C)]) }}"><button class="btn btn-xs btn-warning" style="border-radius:0px" title="Editar Login"><i class="fa fa-pencil"></i> </button></a>
+                <a href="{{ route('linkSeller', ['id' => trim($sellers->UKEY)]) }}"><button class="btn btn-xs btn-warning" style="border-radius:0px" title="Editar Login"><i class="fa fa-pencil"></i> </button></a>
                 @endif
               </td>
             </tr>
