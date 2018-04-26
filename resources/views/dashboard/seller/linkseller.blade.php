@@ -15,29 +15,24 @@
 
       <div class="x_content">
 
-        @if(!empty($linkseller))
-        <form class="form-horizontal form-label-left input_mask" action="{{ route('linksellerUpdate', $informative->id) }}" method="POST">
-          {{ method_field('PUT') }}
-        @else
         <form class="form-horizontal form-label-left input_mask" action="{{ route('linksellerStore') }}" method="POST">
-        @endif
          {{ csrf_field() }}
 
         <div class="col-md-12 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Nome Vendedor</label>
-          <input type="text" required class="form-control has-feedback-left" value="@if(!empty($seller)){{$seller->A33_002_C}}@endif">
+          <input type="text" required class="form-control has-feedback-left" value="@if(!empty($seller)){{trim($seller->A33_002_C)}}@endif">
           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
         </div>
 
         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Usuário</label>
-          <input type="text" required name="usuario" class="form-control has-feedback-left" value="" placeholder="Usuário Vendedor">
+          <input type="text" required name="usuario" class="form-control has-feedback-left" value="@if(!empty($seller)){{trim($seller->A33_024_C)}}@endif" placeholder="Usuário Vendedor">
           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
         </div>
 
         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Senha</label>
-          <input type="text" required name="senha" class="form-control has-feedback-left" value="" placeholder="Senha Vendedor">
+          <input type="password" required name="senha" class="form-control has-feedback-left" placeholder="Senha Vendedor">
           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
         </div>
 

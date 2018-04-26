@@ -21,7 +21,7 @@
                         <img src="{{asset('dashboard/assets/img/logo.png')}}" class="">
                 </div>
                 <div class="login-form">
-                    <form action="" method="POST">
+                    <form action="{{ route('login') }}" method="POST">
                       {{ csrf_field() }}
                         <div class="form-group">
                             <label>Usuário</label>

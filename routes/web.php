@@ -6,7 +6,14 @@ Route::get('/', function () {
 
 Route::get('/entrar', function () {
     return view('dashboard.login');
-})->name('login');
+})->name('logar');
+
+
+Route::post('/login','Dashboard\SellerController@login')->name('login');
+Route::get('/logout','Dashboard\SellerController@logout')->name('logout');
+
+
+
 
 Route::prefix('/clientes')->group(function () {
 
@@ -22,9 +29,7 @@ Route::prefix('/vendedores')->group(function () {
 
     Route::get('/{id}/dadosvendedor','Dashboard\SellerController@edit')->name('sellerData');
 
-    Route::get('/{id}/vincular', function () {
-    return view('dashboard.seller.linkseller');
-    })->name('linkSeller');
+    Route::get('/{id}/vincular','Dashboard\SellerController@link')->name('linkSeller');
 
     Route::get('/{id}/edit','Dashboard\SellerController@edit')->name('linksellerEdit');
     Route::post('/salva','Dashboard\SellerController@store')->name('linksellerStore');

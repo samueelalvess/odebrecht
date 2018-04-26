@@ -104,7 +104,7 @@ class Request extends Model
             {
               $ukey_i = bcrypt(now());
               $ukey_i = substr($ukey_i,0,20);
-              
+
               $pei = \DB::insert("INSERT INTO [jj21] (
                                                       [CIA_UKEY],
                                                       [D04_UKEY],
