@@ -1,10 +1,7 @@
 <?php
 
-Route::get('/', function () {
-    return view('dashboard.dashboard');
-})->name('home');
 
-Route::get('/entrar', function () {
+Route::get('/login', function () {
     return view('dashboard.login');
 })->name('logar');
 
@@ -12,8 +9,11 @@ Route::get('/entrar', function () {
 Route::post('/login','Dashboard\SellerController@login')->name('login');
 Route::get('/logout','Dashboard\SellerController@logout')->name('logout');
 
+Route::get('/select','Dashboard\RequestController@select')->name('select');
 
+Route::group(['middleware' => 'auth'], function () {
 
+Route::get('/','Dashboard\DashboardController@index')->name('home');
 
 Route::prefix('/clientes')->group(function () {
 
@@ -68,4 +68,5 @@ Route::prefix('/informativos')->group(function () {
   Route::post('/salva','Dashboard\InformativeController@store')->name('informativeStore');
   Route::put('/{id}/update','Dashboard\InformativeController@update')->name('informativeUpdate');
 
+});
 });

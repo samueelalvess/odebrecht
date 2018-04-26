@@ -51,30 +51,17 @@
           <div class="col-md-12 col-sm-12 col-xs-12">
             <table class="table table-responsive table-striped table-hover">
               <thead>
-                <th>Doc</th>
+                <th>Num. Pedidos</th>
                 <th>Nome</th>
               </thead>
               <tbody>
-                <tr>
-                  <td>47427653008876</td>
-                  <td>MAKRO ATACADISTA SOCIEDADE ANONIMA</td>
-                </tr>
-                <tr>
-                  <td>47427653005850</td>
-                  <td>MAKRO ATACADISTA SOCIEDADE ANONIMA</td>
-                </tr>
-                <tr>
-                  <td>47427653005850</td>
-                  <td>MAKRO ATACADISTA SOCIEDADE ANONIMA</td>
-                </tr>
-                <tr>
-                  <td>47427653005850</td>
-                  <td>MAKRO ATACADISTA SOCIEDADE ANONIMA</td>
-                </tr>
-                <tr>
-                  <td>47427653005850</td>
-                  <td>MAKRO ATACADISTA SOCIEDADE ANONIMA</td>
-                </tr>
+                @foreach($topclient as $client)
+                  <tr>
+                    <td>{{$client->Total}}</td>
+                    <td>{{trim($client->A03_002_C)}}</td>
+                  </tr>
+                @endforeach
+
               </tbody>
             </table>
           </div>

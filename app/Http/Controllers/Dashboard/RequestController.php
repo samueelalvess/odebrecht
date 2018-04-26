@@ -11,16 +11,19 @@ use App\Model\Document;
 use App\Model\Payment;
 use App\Model\Billed;
 use App\Model\ReportBilled;
+use Auth;
 
 class RequestController extends Controller
 {
     private $client;
     private $product;
+    private $user;
 
     public function __construct(Client $cli,Product $pro)
     {
       $this->client = $cli;
       $this->product = $pro;
+      $this->user = Auth::user();
     }
 
     public function create()
@@ -70,5 +73,10 @@ class RequestController extends Controller
     {
       $reportebilled = $rpbilled->getReportNotBilled(1);
       return view('dashboard.order.notbilledorderslist',['rpbilled'=>$reportebilled]);
+    }
+    public function select()
+    {
+      $pe = new \App\Model\Request();
+      return $pe->seleciona();
     }
 }

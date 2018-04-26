@@ -25,7 +25,7 @@ class ReportBilled extends Model
                     ->join('A33','J07.A33_UKEY','=','A33.UKEY')
                     ->where('J07.J07_027_N',1)
                     ->where('J07.J07_043_N',1)
-                    ->where('A33.UKEY','7CB0A0344D4C414E95CC')
+                    ->where('A33.UKEY',auth()->user()->ukey)
                     //->where('J07.J07_003_D','>','2018-04-17')
                     ->limit(10)
                     ->get();
@@ -50,7 +50,7 @@ class ReportBilled extends Model
                     ->where('J07.J07_027_N',1)
                     ->where('J07.J07_043_N',0)
                     ->where('JJ20_013_N',$status)
-                    ->where('A33.UKEY','7CB0A0344D4C414E95CC')
+                    ->where('A33.UKEY',auth()->user()->ukey)
                     //->where('J07.J07_003_D','>','2018-04-17')
                     ->limit(10)
                     ->get();

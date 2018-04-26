@@ -13,7 +13,7 @@
       </div>
       <div class="profile_info">
         <span>Bem-vindo,</span>
-        <h2>Samuel Alves</h2>
+        <h2>{{ Auth::user()->name }}</h2>
       </div>
       <div class="clearfix"></div>
     </div>
@@ -52,7 +52,7 @@
 
     <!-- /menu footer buttons -->
     <div class="sidebar-footer hidden-small">
-      <a data-toggle="tooltip" data-placement="top" title="Sair" href="login.html">
+      <a data-toggle="tooltip" data-placement="top" title="Sair" href="{{route('logout')}}">
         <span class="fa fa-power-off" aria-hidden="true"></span>
       </a>
     </div>
