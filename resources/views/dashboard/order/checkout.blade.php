@@ -400,7 +400,7 @@
 <script src="{{ asset('dashboard/assets/js/lib/data-table/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/lib/data-table/datatables-init.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/lib/notify/bootstrap-notify.js') }}"></script>
-<script src="{{ asset('dashboard/assets/js/checkout/checkout.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/order/checkout.js') }}"></script>
 <script src="{{ asset('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js') }}"></script>
 <script>
