@@ -25,7 +25,7 @@
                       {{ csrf_field() }}
                         <div class="form-group">
                             <label>Usuário</label>
-                            <input type="email" class="form-control" name="usuario" placeholder="Usuário">
+                            <input type="email" class="form-control" name="email" placeholder="Usuário">
                         </div>
                         <div class="form-group">
                             <label>Senha</label>

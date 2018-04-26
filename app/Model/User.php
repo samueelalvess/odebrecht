@@ -26,7 +26,7 @@ class User extends Model
 
     public function setUserUpdate($request,$id)
     {
-      $user = $this->find($id);
+      $user = $this->select()->where('ukey',$id)->first();
       $pass = bcrypt($request->password);
       return $user->update([
                               'name' => $request->nome,

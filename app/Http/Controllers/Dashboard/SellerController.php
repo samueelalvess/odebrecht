@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Seller;
 use App\Model\User;
+use Illuminate\Support\Facades\Auth;
 
 class SellerController extends Controller
 {
