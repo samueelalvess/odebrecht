@@ -42,7 +42,7 @@
       <div class="menu_section">
         <h3>Perfil</h3>
         <ul class="nav side-menu">
-          <li><a href="{{route('login')}}"><i class="fa fa-user"></i> Meu Perfil </a></li>
+          <li><a href="{{route('printOrder')}}"><i class="fa fa-user"></i> Meu Perfil </a></li>
           <li><a href="f"><i class="fa fa-cogs"></i> Configurações </a></li>
         </ul>
       </div>

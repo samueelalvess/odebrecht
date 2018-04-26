@@ -46,6 +46,10 @@ Route::prefix('/pedidos')->group(function () {
   Route::get('/faturados', 'Dashboard\RequestController@reportBilled')->name('billedList');
   Route::get('/naofaturados', 'Dashboard\RequestController@reportNotBilled')->name('notbilledList');
 
+  Route::get('/imprimir', function () {
+  return view('dashboard.order.printorder');
+  })->name('printOrder');
+
 });
 
 Route::prefix('/informativos')->group(function () {
