@@ -32,7 +32,7 @@
               <td>{{$info->titulo}}</td>
               <td>{{date('d/m/Y', strtotime($info->data_criado))}}</td>
               <td align="center">
-                <a href="{{route('informativeData')}}"><button class="btn btn-xs btn-warning" style="border-radius:0px"><i class="fa fa-eye"></i> Detalhes</button></a>
+                <a href="{{route('informativeData', ['id' => $info->id])}}"><button class="btn btn-xs btn-warning" style="border-radius:0px"><i class="fa fa-eye"></i> Detalhes</button></a>
                 <a href="{{route('informativeEdit', ['id' => $info->id])}}"><button class="btn btn-xs btn-info" style="border-radius:0px"><i class="fa fa-pencil"></i> Editar</button></a>
               </td>
             </tr>

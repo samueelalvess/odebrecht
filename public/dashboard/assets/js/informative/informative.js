@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
   $('#informativeList').DataTable( {
-
+    "order": [[ 0, "desc" ]],
     "language":
     {
     "sEmptyTable": "Nenhum registro encontrado",
