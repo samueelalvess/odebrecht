@@ -29,7 +29,7 @@ class User extends Model
       $user = $this->select()->where('ukey',$id)->first();
       $pass = bcrypt($request->password);
       return $user->update([
-                              'name' => $request->nome,
+                              'name' => $request->name,
                               'email' => $request->email,
                               'password' => $pass,
                             ]);
