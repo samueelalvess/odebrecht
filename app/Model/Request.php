@@ -160,28 +160,5 @@ class Request extends Model
       $valor = str_replace(',','.',$valor);
       return $valor;
     }
-    public function seleciona()
-    {
-       //\DB::select("SELECT * FROM JJ20 WHERE A33_UKEY = '".auth()->user()->ukey."'");
-       $valor = \DB::select("SELECT Total,D04.D04_002_C
-                             FROM D04
-                             INNER JOIN (
-                                          SELECT TOP 10 COUNT(JJ21.D04_UKEY) as Total,JJ21.D04_UKEY AS ukeyproduto
-                                          FROM JJ20
-                                          INNER JOIN JJ21 ON jj21.JJ20_UKEY = JJ20.UKEY
-                                          WHERE A33_UKEY = '".auth()->user()->ukey."'
-                                          GROUP BY JJ21.D04_UKEY
-                                          ORDER BY Total desc
-                                        ) as topprodutos on topprodutos.ukeyproduto = D04.UKEY");
-
-
-       /*$valor = $this->select()
-                   ->Join('jj21', 'jj20.UKEY', '=', 'jj21.JJ20_UKEY')
-                   ->join('D04','JJ21.D04_UKEY','=','D04.UKEY')
-                   ->where('A33_UKEY',auth()->user()->ukey)
-                   ->groupBy('JJ20.UKEY')
-                   ->get(); */
-       dd($valor);
-    }
 
 }

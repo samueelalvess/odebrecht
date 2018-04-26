@@ -56,5 +56,24 @@ class ReportBilled extends Model
                     ->get();
       return $data;
     }
+    public function getReportBilledDashboard()
+    {
+      $valor = \DB::select("SELECT  { fn MONTHNAME(J07_003_D) } AS MonthName, YEAR(J07_003_D) AS Year, COUNT(J07.UKEY) AS TOTAL
+                             FROM [J07]
+                             WHERE  (YEAR(J07_003_D) = Year(getdate())) and J07_027_N = 1 and J07_043_N = 1 and J07.A33_UKEY = '".auth()->user()->ukey."'
+                             GROUP BY { fn MONTHNAME(J07_003_D) }, MONTH(J07_003_D), YEAR(J07_003_D)
+                             order by Year(J07_003_D),month(J07_003_D)");
+      return $valor;
+    }
+
+    public function getReportNotBilledDashboard()
+    {
+      $valor = \DB::select("SELECT  { fn MONTHNAME(J07_003_D) } AS MonthName, YEAR(J07_003_D) AS Year, COUNT(J07.UKEY) AS TOTAL
+                             FROM [J07]
+                             WHERE  (YEAR(J07_003_D) = Year(getdate())) and J07_027_N = 1 and J07_043_N = 0 and J07.A33_UKEY = '".auth()->user()->ukey."'
+                             GROUP BY { fn MONTHNAME(J07_003_D) }, MONTH(J07_003_D), YEAR(J07_003_D)
+                             order by Year(J07_003_D),month(J07_003_D)");
+      return $valor;
+    }
 
 }
