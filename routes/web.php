@@ -32,7 +32,7 @@ Route::prefix('/vendedores')->group(function () {
     Route::get('/{id}/vincular','Dashboard\SellerController@link')->name('linkSeller');
 
     Route::get('/{id}/edit','Dashboard\SellerController@edit')->name('linksellerEdit');
-    Route::post('/salva','Dashboard\SellerController@store')->name('linksellerStore');
+    Route::post('{id}/salva','Dashboard\SellerController@linkUser')->name('linksellerStore');
     Route::put('/{id}/update','Dashboard\SellerController@update')->name('linksellerUpdate');
 
 });

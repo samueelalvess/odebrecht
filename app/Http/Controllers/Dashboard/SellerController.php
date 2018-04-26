@@ -34,9 +34,9 @@ class SellerController extends Controller
         $_seller = $this->seller->getSellerId($id);
         return view('dashboard.seller.linkseller',['seller' => $_seller,'ukey' => $id]);
     }
-    public function linkUser(Request $resquest,$id)
+    public function linkUser(Request $data,$id)
     {
-      $link = $this->$seller->setLinkSeller($request,$id);
+      $link = $this->seller->setLinkSeller($data,$id);
       if ( $link )
         return redirect()->route('sellerList');
       else

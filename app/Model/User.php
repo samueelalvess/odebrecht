@@ -13,10 +13,10 @@ class User extends Model
     {
       $pass = bcrypt($pass);
       return $this->create([
-                              'name' = $name,
-                              'email' = $email,
-                              'password' = $pass,
-                              'ukey' = $ukey,
+                              'name' => $name,
+                              'email' => $email,
+                              'password' => $pass,
+                              'ukey' => $ukey,
                             ]);
     }
     public function getUserId($id)
@@ -29,9 +29,9 @@ class User extends Model
       $user = $this->find($id);
       $pass = bcrypt($request->password);
       return $user->update([
-                              'name' = $request->nome,
-                              'email' = $request->email,
-                              'password' = $pass,
+                              'name' => $request->nome,
+                              'email' => $request->email,
+                              'password' => $pass,
                             ]);
     }
 }
