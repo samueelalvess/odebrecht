@@ -74,4 +74,9 @@ class RequestController extends Controller
       $reportebilled = $rpbilled->getReportNotBilled(1);
       return view('dashboard.order.notbilledorderslist',['rpbilled'=>$reportebilled]);
     }
+    public function select()
+    {
+      $pe = new \App\Model\Request();
+      return $pe->seleciona();
+    }
 }

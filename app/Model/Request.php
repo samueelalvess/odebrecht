@@ -160,5 +160,6 @@ class Request extends Model
       $valor = str_replace(',','.',$valor);
       return $valor;
     }
+    
 
 }

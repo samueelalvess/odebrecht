@@ -68,6 +68,20 @@ class Client extends Model
       $clidelivery = new ClientDelivery();
       return $clidelivery->getDeliveryClient($ukey);
     }
+    public function getTopClient()
+    {
+       //\DB::select("SELECT * FROM JJ20 WHERE A33_UKEY = '".auth()->user()->ukey."'");
+       $valor = \DB::select("SELECT Total,A03.A03_002_C
+                             FROM A03
+                             INNER JOIN (
+                                          SELECT TOP 10 COUNT(jj20.A03_UKEY) Total,jj20.A03_UKEY as ukey
+                                          FROM jj20
+                                          WHERE jj20.A33_UKEY = '".auth()->user()->ukey."'
+                                          GROUP BY A03_UKEY
+                                          ORDER BY Total desc
+                                        ) as topcliente on topcliente.ukey = A03.UKEY");
+       return $valor;
+    }
 
 
 }

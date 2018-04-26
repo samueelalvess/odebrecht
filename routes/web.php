@@ -9,11 +9,11 @@ Route::get('/login', function () {
 Route::post('/login','Dashboard\SellerController@login')->name('login');
 Route::get('/logout','Dashboard\SellerController@logout')->name('logout');
 
+Route::get('/select','Dashboard\RequestController@select')->name('select');
+
 Route::group(['middleware' => 'auth'], function () {
 
-  Route::get('/', function () {
-      return view('dashboard.dashboard');
-  })->name('home');
+Route::get('/','Dashboard\DashboardController@index')->name('home');
 
 Route::prefix('/clientes')->group(function () {
 
