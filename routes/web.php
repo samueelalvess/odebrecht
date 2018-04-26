@@ -47,9 +47,7 @@ Route::prefix('/informativos')->group(function () {
 
   Route::get('/lista', 'Dashboard\InformativeController@index')->name('informativeList');
 
-  Route::get('/dados', function () {
-  return view('dashboard.informative.informative');
-  })->name('informativeData');
+  Route::get('/{id}/dados', 'Dashboard\InformativeController@show')->name('informativeData');
 
   Route::get('/novo', function () {
   return view('dashboard.informative.newinformative');
