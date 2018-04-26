@@ -2,6 +2,7 @@
 $(document).ready(function() {
 
   $('#sellerList').DataTable( {
+    "order": [[ 5, "desc" ]],
     "language":
     {
     "sEmptyTable": "Nenhum registro encontrado",

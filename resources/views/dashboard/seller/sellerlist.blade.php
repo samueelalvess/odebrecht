@@ -36,11 +36,20 @@
               <td>{{$sellers -> A33_012_C}}</td>
               <td>{{$sellers -> A33_024_C}}</td>
               <td>{{$sellers -> A24_001_C}}</td>
-              <td><label class="label label-danger">Não Vinculado</label></td>
+              <td>
+                @if (empty($sellers->id))
+                <label class="label label-danger">Não Vinculado</label>
+                @else
+                <label class="label label-success">Vinculado</label>
+                @endif
+              </td>
               <td>
                 <a href="{{ route('sellerData', ['id' => trim($sellers->UKEY)]) }}"><button class="btn btn-xs btn-warning" style="border-radius:0px" title="Ver Dados"><i class="fa fa-eye"></i> </button></a>
-                <!-- <a href="{{ route('linkSeller', ['id' => trim($sellers->A33_001_C)]) }}"><button class="btn btn-xs btn-warning" style="border-radius:0px" title="Editar Login"><i class="fa fa-pencil"></i> </button></a> -->
+                @if (empty($sellers->id))
                 <a href="{{ route('linkSeller', ['id' => trim($sellers->UKEY)]) }}"><button class="btn btn-xs btn-success" style="border-radius:0px" title="Vincular"><i class="fa fa-exchange"></i> </button></a>
+                @else
+                <a href="{{ route('linkSeller', ['id' => trim($sellers->A33_001_C)]) }}"><button class="btn btn-xs btn-warning" style="border-radius:0px" title="Editar Login"><i class="fa fa-pencil"></i> </button></a>
+                @endif
               </td>
             </tr>
             @endforeach
