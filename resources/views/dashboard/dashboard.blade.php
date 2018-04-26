@@ -83,30 +83,17 @@
           <div class="col-md-12 col-sm-12 col-xs-12">
             <table class="table table-responsive table-striped table-hover">
               <thead>
-                <th>Cod</th>
+                <th>Num. Vendido</th>
                 <th>Descrição</th>
               </thead>
               <tbody>
-                <tr>
-                  <td>1A4520F3-6A2B-4CFA-A</td>
-                  <td>ADOCANTE CAFE ODEBRECHT SACHE 1000</td>
-                </tr>
-                <tr>
-                  <td>20081210STAR_50Z6510</td>
-                  <td>AÇUCAR</td>
-                </tr>
-                <tr>
-                  <td>02D02FF4-6BBE-4D4E-8</td>
-                  <td>CAFE TORRADO EM GRAO EMBALAGEM</td>
-                </tr>
-                <tr>
-                  <td>200902130UMYKZ0P8MYO</td>
-                  <td>CAFE SOLUVEL ODEBRECHT POTE 200 GR</td>
-                </tr>
-                <tr>
-                  <td>200901220UMYKD0VRA72</td>
-                  <td>CAFE TORRADO EM GRAO</td>
-                </tr>
+                @foreach($topproduct as $product)
+                    <tr>
+                      <td>{{$product->Total}}</td>
+                      <td>{{trim($product->D04_002_C)}}</td>
+                    </tr>
+                @endforeach
+
               </tbody>
             </table>
           </div>
