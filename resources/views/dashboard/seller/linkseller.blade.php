@@ -14,9 +14,14 @@
       </div>
 
       <div class="x_content">
-
+        @if(!empty($seller))
+        <form class="form-horizontal form-label-left input_mask" action="{{ route('linksellerUpdate', $ukey) }}" method="POST">
+          {{ method_field('PUT') }}
+        @else
         <form class="form-horizontal form-label-left input_mask" action="{{ route('linksellerStore', $ukey) }}" method="POST">
+        @endif
          {{ csrf_field() }}
+
 
         <div class="col-md-12 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Nome Vendedor</label>
