@@ -23,6 +23,7 @@ class DashboardController extends Controller
                                           'billeds' => $billeds,
                                           'notbilleds' => $notbilleds
                                         ]);
+
     }
 
 }

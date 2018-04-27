@@ -19,18 +19,24 @@
           </h2>
           </div>
           <div class="col-md-3 form-inline">
-          <span class="pull-right">Ano:
+          <!--<span class="pull-right">Ano:
             <select class="form-control">
               <option value="2017">2018</option>
               <option value="2017">2017</option>
               <option value="2016">2016</option>
               <option value="2015">2015</option>
-            </select></span>
+            </select></span> -->
           </div>
           <div class="clearfix"></div>
         </div>
 
         <div class="col-md-12 col-sm-12 col-xs-12">
+          @foreach($billeds as $billed)
+          <meta name="{{$billed->MonthName}}_vendas" content="{{$billed->TOTAL}} " >
+          @endforeach
+          @foreach($notbilleds as $notbilled)
+          <meta name="{{$notbilled->MonthName}}_pedidos" content="{{$notbilled->TOTAL}} " >
+          @endforeach
           <canvas id="evolutivo" style="position: relative; height:40vh; width:80vw" class="hidden-xs"></canvas>
         </div>
 
