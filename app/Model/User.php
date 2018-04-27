@@ -23,6 +23,12 @@ class User extends Model
     {
         return $this->find($id);
     }
+    public function getUserUkey($ukey)
+    {
+      return $this->select()
+                  ->where('ukey',$ukey)
+                  ->first();
+    }
 
     public function setUserUpdate($request,$id)
     {

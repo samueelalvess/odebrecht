@@ -25,7 +25,13 @@ class SellerController extends Controller
         return view('dashboard.seller.sellerlist',['seller' => $sellers]);
     }
 
-    public function edit($id)
+    public function edit(User $user,$ukey)
+    {
+        $usr = $user->getUserUkey($ukey);
+        return view('dashboard.seller.linkseller',['user' => $usr]);
+
+    }
+    public function show($id)
     {
         $_seller = $this->seller->getSellerId($id);
         return view('dashboard.seller.seller',['seller' => $_seller]);
