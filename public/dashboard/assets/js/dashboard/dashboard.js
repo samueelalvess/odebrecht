@@ -35,13 +35,13 @@ var chart = new Chart(ctx, {
     data: {
         labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
         datasets: [{
-            label: " Vendas",
+            label: " Pedidos Faturados",
             backgroundColor: 'rgb(39, 174, 96)',
             borderColor: 'rgb(46, 204, 113)',
             data: [janeiro, fevereiro, marco, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro],
         },
         {
-            label: " Pedidos",
+            label: " Pedidos Não Faturados",
             backgroundColor: 'rgb(208, 85, 0)',
             borderColor: 'rgb(236, 85, 0)',
             data: [janeiro_, fevereiro_, marco_, abril_, maio_, junho_, julho_, agosto_, setembro_, outubro_, novembro_, dezembro_],
