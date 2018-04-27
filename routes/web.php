@@ -26,7 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
 
               Route::get('/lista', 'Dashboard\SellerController@index')->name('sellerList');
 
-              Route::get('/{id}/dadosvendedor','Dashboard\SellerController@edit')->name('sellerData');
+              Route::get('/{id}/dadosvendedor','Dashboard\SellerController@show')->name('sellerData');
 
               Route::get('/{id}/vincular','Dashboard\SellerController@link')->name('linkSeller');
 

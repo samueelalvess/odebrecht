@@ -14,7 +14,7 @@
       </div>
 
       <div class="x_content">
-        @if(!empty($seller))
+        @if(!empty($seller->id))
         <form class="form-horizontal form-label-left input_mask" action="{{ route('linksellerUpdate', $ukey) }}" method="POST">
           {{ method_field('PUT') }}
         @else
@@ -31,7 +31,7 @@
 
         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Email</label>
-          <input type="text" required name="email" class="form-control has-feedback-left" value="@if(!empty($seller)){{trim($seller->A33_024_C)}}@endif" placeholder="Email do Vendedor">
+          <input type="text" required name="email" class="form-control has-feedback-left" value="@if(!empty($seller)){{trim($seller->usuario)}}@endif" placeholder="Email do Vendedor">
           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
         </div>
 
