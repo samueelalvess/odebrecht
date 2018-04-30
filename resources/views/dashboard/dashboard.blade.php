@@ -57,7 +57,7 @@
           <div class="col-md-12 col-sm-12 col-xs-12">
             <table class="table table-responsive table-striped table-hover">
               <thead>
-                <th>Num. Pedidos</th>
+                <th><small>Pedidos</small></th>
                 <th>Nome</th>
               </thead>
               <tbody>
@@ -89,7 +89,7 @@
           <div class="col-md-12 col-sm-12 col-xs-12">
             <table class="table table-responsive table-striped table-hover">
               <thead>
-                <th>Num. Vendido</th>
+                <th><small>Vendas</small></th>
                 <th>Descrição</th>
               </thead>
               <tbody>

@@ -13,7 +13,7 @@
       </div>
       <div class="profile_info">
         <span>Bem-vindo,</span>
-        <h2>{{ Auth::user()->name }}</h2>
+        <h2 style="font-size:8pt">{{ Auth::user()->name }}</h2>
       </div>
       <div class="clearfix"></div>
     </div>
