@@ -22,7 +22,7 @@
       <div class="x_content">
 
           <h2>Cliente</h2>
-          <select class="selectpicker form-control" data-live-search="true">
+          <select id="combocli" class="selectpicker form-control" data-live-search="true">
             <option> -- Informe o cliente que você deseja realizar o pedido -- </option>
             @foreach($clients as $client)
             <?php $clienteblade = $client['UKEY'].' - '.$client['A03_002_C']; ?>
@@ -69,7 +69,7 @@
                   <td>
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">R$</span>
-                      <input type="text" id="valor-{{trim($product->UKEY)}}" class="form-control valor" data-symbol="R$ " data-thousands="." data-decimal="," placeholder="0,00">
+                      <input type="text" id="valor-{{trim($product->UKEY)}}" class="valorprod form-control" data-symbol="R$ " data-thousands="." data-decimal="," placeholder="0,00">
                     </div>
                   </td>
                   <td>
@@ -154,7 +154,7 @@
             <tr>
                 <th colspan="4" class="text-right"><strong><h4>TOTAL</h4></strong></th>
                 <th class="text-center">
-                    <h4>R$ <span id="totaltxt"> <?php if (isset($_COOKIE["carrinho"])) { echo number_format($total,2,',','.'); } else { echo '0,00'; } ?> </span></h4>
+                    <h4>R$ <span id="totaltxt"><?php if(isset($_COOKIE["carrinho"])){echo number_format($total,2,',','.');}else{echo'0,00';}?></span></h4>
                 </th>
             </tr>
           </tfoot>
@@ -168,7 +168,7 @@
                 <a href="{{route('checkoutOrder',['id'=>'09D3F95B5D654924A143'])}}"><button id="btn_continuar" disabled class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
               </div>
               <div class="col-md-12" id="div_alerta">
-                <span class="pull-right"><small style="color:red">*Informe o cliente para prosseguir com o pedido.</small></span>
+                <span class="pull-right"><small style="color:red">*Informe o cliente e/ou insira um produto para prosseguir com o pedido.</small></span>
               </div>
 
     </div>
