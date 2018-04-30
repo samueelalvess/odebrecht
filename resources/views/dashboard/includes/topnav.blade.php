@@ -10,13 +10,13 @@
         <li class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
             <img src="images/img.jpg" alt="">{{ Auth::user()->name }}
-            <span class=" fa fa-angle-down"></span>
+          <!--  <span class=" fa fa-angle-down"></span> -->
           </a>
-          <ul class="dropdown-menu dropdown-usermenu pull-right">
+        <!--  <ul class="dropdown-menu dropdown-usermenu pull-right">
             <li><a href="javascript:;"> Meu Perfil</a></li>
             <li><a href="javascript:;"> Configurações</a></li>
             <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Sair</a></li>
-          </ul>
+          </ul> -->
         </li>
       </ul>
     </nav>

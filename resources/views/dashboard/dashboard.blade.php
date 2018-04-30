@@ -15,7 +15,7 @@
         <div class="x_title">
           <div class="col-md-9">
           <h2>Evolutivo Mensal de Faturamento Pessoal
-            <small><em>Ano <label>2018 </label> | Vendedor: <label>Samuel Alves</label> </em></small>
+            <small><em>Ano <label>{{date('Y')}} </label> | Vendedor: <label>{{ Auth::user()->name }}</label> </em></small>
           </h2>
           </div>
           <div class="col-md-3 form-inline">
@@ -49,7 +49,7 @@
 
           <div class="x_title">
             <div class="col-md-12">
-            <h2>Top 10 Clientes <small><em>(Mês atual)</em></small></h2>
+            <h2>Top 10 Clientes <small><em>(Todos Pedidos)</em></small></h2>
             </div>
             <div class="clearfix"></div>
           </div>
@@ -81,7 +81,7 @@
 
           <div class="x_title">
             <div class="col-md-12">
-            <h2>Top 10 Produtos <small><em>(Mês atual)</em></small></h2>
+            <h2>Top 10 Produtos <small><em>(Todos Pedidos)</em></small></h2>
             </div>
             <div class="clearfix"></div>
           </div>
