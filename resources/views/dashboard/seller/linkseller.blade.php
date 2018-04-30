@@ -25,19 +25,19 @@
 
         <div class="col-md-12 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Nome Vendedor</label>
-          <input type="text" name="name" required class="form-control has-feedback-left" value="@if(!empty($seller)){{trim($seller->A33_002_C)}}@endif">
+          <input type="text" name="name" required class="form-control has-feedback-left" value="@if(!empty($seller->id)){{trim($seller->name)}} @else {{trim($seller->A33_002_C)}} @endif">
           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
         </div>
 
         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Email</label>
-          <input type="text" required name="email" class="form-control has-feedback-left" value="@if(!empty($seller)){{trim($seller->usuario)}}@endif" placeholder="Email do Vendedor">
+          <input type="text" required name="email" class="form-control has-feedback-left" value="@if(!empty($seller->id)) {{trim($seller->email)}} @else {{trim($seller->A33_024_C)}} @endif" placeholder="Email do Vendedor">
           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
         </div>
 
         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
           <label>Senha</label>
-          <input type="password" required name="password" class="form-control has-feedback-left" placeholder="Senha Vendedor">
+          <input type="password" required name="password" class="form-control has-feedback-left" value="@if(!empty($seller->id)) {{trim($seller->password)}} @endif" placeholder="Senha Vendedor">
           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
         </div>
 

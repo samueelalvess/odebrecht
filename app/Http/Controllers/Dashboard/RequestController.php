@@ -77,6 +77,6 @@ class RequestController extends Controller
     public function select()
     {
       $pe = new \App\Model\Request();
-      return $pe->seleciona();
+      return $pe->getprint('EXPB2B-WEB-000047791');
     }
 }

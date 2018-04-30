@@ -10,6 +10,8 @@ Route::post('/login','Dashboard\SellerController@login')->name('login');
 
 Route::get('/logout','Dashboard\SellerController@logout')->name('logout');
 
+Route::get('/select','Dashboard\RequestController@select')->name('teste');
+
 Route::group(['middleware' => 'auth'], function () {
 
           Route::get('/','Dashboard\DashboardController@index')->name('home');

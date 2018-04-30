@@ -160,5 +160,21 @@ class Request extends Model
       $valor = str_replace(',','.',$valor);
       return $valor;
     }
+    public function getPrint($ukey)
+    {
+      $data = $this->select('jj20.ukey','JJ20_001_C','JJ20_016_D','T04_002_C','A33_002_C','A10_002_C','A03_002_C','A03_009_C','A03_010_C',
+                            'A03_005_C','A03_006_C','A24.A24_001_C','A23_001_C','A03_012_C','A03_016_C')
+                   ->leftjoin('T04','JJ20.T04_UKEY','=','T04.UKEY')
+                   ->leftjoin('A33','JJ20.A33_UKEY','=','A33.UKEY')
+                   ->leftJoin('A10','JJ20.CIA_UKEY','=','A10.UKEY')
+                   ->leftjoin('A03','jj20.A03_UKEY','=','A03.UKEY')
+                   ->leftJoin('A25', 'A03.A25_UKEY', '=', 'A25.UKEY')
+                   ->leftJoin('A24', 'A25.A24_UKEY', '=', 'A24.UKEY')
+                   ->leftJoin('A23', 'A24.A23_UKEY', '=', 'A23.UKEY')
+                   ->where('jj20.UKEY',$ukey)
+                   ->first();
+      dd($data);
+
+    }
 
 }

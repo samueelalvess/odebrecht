@@ -28,7 +28,7 @@ class SellerController extends Controller
     public function edit(User $user,$ukey)
     {
         $usr = $user->getUserUkey($ukey);
-        return view('dashboard.seller.linkseller',['user' => $usr,'ukey' => $ukey]);
+        return view('dashboard.seller.linkseller',['seller' => $usr,'ukey' => $ukey]);
 
     }
     public function show($id)
@@ -75,6 +75,7 @@ class SellerController extends Controller
         return redirect()->back();
 
     }
+    
 
 
 }
