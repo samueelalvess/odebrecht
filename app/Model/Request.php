@@ -162,8 +162,9 @@ class Request extends Model
     }
     public function getPrint($ukey)
     {
-      $data = $this->select('jj20.ukey','JJ20_001_C','JJ20_016_D','T04_002_C','A33_002_C','A10_002_C','A03_002_C','A03_009_C','A03_010_C',
-                            'A03_005_C','A03_006_C','A24.A24_001_C','A23_001_C','A03_012_C','A03_016_C')
+      $data = $this->select('jj20.ukey','JJ20_001_C','JJ20_016_D','T04_002_C','A33_002_C','A10_002_C','A03.A03_002_C','A03.A03_009_C','A03.A03_010_C',
+                            'A03.A03_005_C','A03.A03_006_C','A24.A24_001_C','A23.A23_001_C','A03.A03_012_C','A03.A03_016_C','A03_1.A03_005_C as ENDERECO_ENTREGA','A24_1.A24_001_C as CIDADE_ENTREGA',
+                            'A23_1.A23_001_C as UF_ENTREGA','A06.A06_004_C as CEP_ENTREGA','JJ20.JJ20_003_C','A21_002_C','A13_002_C','JJ20_009_C','JJ20_015_M','JJ20_007_M')
                    ->leftjoin('T04','JJ20.T04_UKEY','=','T04.UKEY')
                    ->leftjoin('A33','JJ20.A33_UKEY','=','A33.UKEY')
                    ->leftJoin('A10','JJ20.CIA_UKEY','=','A10.UKEY')
@@ -171,10 +172,25 @@ class Request extends Model
                    ->leftJoin('A25', 'A03.A25_UKEY', '=', 'A25.UKEY')
                    ->leftJoin('A24', 'A25.A24_UKEY', '=', 'A24.UKEY')
                    ->leftJoin('A23', 'A24.A23_UKEY', '=', 'A23.UKEY')
+                   ->leftjoin('A06','JJ20.A06_UKEY','=','A06.UKEY')
+                   ->leftjoin('A03 as A03_1','A06.A03_UKEY', '=', 'A03_1.UKEY')
+                   ->leftjoin('A25 as A25_1','A06.A25_UKEY', '=', 'A25_1.UKEY')
+                   ->leftJoin('A24 as A24_1', 'A25_1.A24_UKEY', '=', 'A24_1.UKEY')
+                   ->leftjoin('A23 as A23_1','A24_1.A23_UKEY', '=', 'A23_1.UKEY')
+                   ->leftjoin('A21','JJ20.A21_UKEY','=','A21.UKEY')
+                   ->leftjoin('A13','JJ20.A13_UKEY','=','A13.UKEY')
                    ->where('jj20.UKEY',$ukey)
                    ->first();
-      dd($data);
+      return $data;
 
+    }
+    public function getPrintProduct($ukey)
+    {
+      $data = \DB::select("SELECT D04_001_C,D04.D04_002_C,JJ21_001_B,JJ21_002_B,JJ21_003_B
+                           FROM jj21
+                           LEFT JOIN D04 on D04.UKEY = JJ21.D04_UKEY
+                           WHERE JJ21.JJ20_UKEY = '".$ukey."'");
+      return $data;
     }
 
 }
