@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col">
   <div class="left_col scroll-view">
-    <div class="navbar nav_title" style="border: 0;">
-      <a href="{{route('home')}}" class="site_title"> <span>CAFÉ ODEBRECHT</span></a>
+    <div class="navbar nav_title" style="border: 0;" align="center">
+      <a href="{{route('home')}}" class="site_title" style="padding:0"> <img src="{{asset('dashboard/assets/img/logo.png')}}" class=""> </a>
     </div>
 
     <div class="clearfix"></div>
@@ -9,7 +9,7 @@
     <!-- menu profile quick info -->
     <div class="profile clearfix">
       <div class="profile_pic">
-        <img src="{{ asset('dashboard/assets/img/img.jpg') }}" alt="..." class="img-circle profile_img">
+        <img src="{{ asset('dashboard/assets/img/user.png') }}" alt="..." class="img-circle profile_img">
       </div>
       <div class="profile_info">
         <span>Bem-vindo,</span>
