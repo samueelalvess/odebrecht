@@ -81,4 +81,16 @@ class RequestController extends Controller
       $reportebilled = $rpbilled->getReportNotBilled(1);
       return view('dashboard.order.notbilledorderslist',['rpbilled'=>$reportebilled]);
     }
+<<<<<<< HEAD
+=======
+    public function getPrint($ukey)
+    {
+      $pe = new \App\Model\Request();
+      //W8-WEB-000047717
+      $data = $pe->getPrint($ukey);
+      $dataproduct = $pe->getPrintProduct($ukey);
+
+      return view('',compact('data'),compact('dataproduct'));
+    }
+>>>>>>> 9adb91ca3fce71d9d334a779b5e950741bd315f7
 }
