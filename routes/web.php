@@ -52,9 +52,7 @@ Route::group(['middleware' => 'auth'], function () {
 
               Route::get('/naofaturados', 'Dashboard\RequestController@reportNotBilled')->name('notbilledList');
 
-              Route::get('/imprimir', function () {
-              return view('dashboard.order.printorder');
-              })->name('printOrder');
+              Route::get('/{id}/imprimir', 'Dashboard\RequestController@print')->name('printOrder');
 
           });
 

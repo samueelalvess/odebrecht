@@ -32,7 +32,6 @@ class Request extends Model
 
     public function setRequest($data)
     {
-      $ukey = auth()->user()->ukey;
       $valor = $this->getNumeric();
       $valor = trim($valor);
       $valor++;
@@ -74,7 +73,7 @@ class Request extends Model
                                   '09D3F95B5D654924A143',
                                   '".$data->prazopagamento."',
                                   '".$data->tipodocumento."',
-                                  '".$ukey."',
+                                  '".auth()->user()->ukey."',
                                   '".$data->filial."',
                                   '".$data->tipofrete."',
                                   1.00,
@@ -171,9 +170,9 @@ class Request extends Model
                    ->leftJoin('A25', 'A03.A25_UKEY', '=', 'A25.UKEY')
                    ->leftJoin('A24', 'A25.A24_UKEY', '=', 'A24.UKEY')
                    ->leftJoin('A23', 'A24.A23_UKEY', '=', 'A23.UKEY')
-                   ->where('jj20.UKEY',$ukey)
+                   ->where('jj20.JJ20_001_C',$ukey)
                    ->first();
-      dd($data);
+      return $data;
 
     }
 

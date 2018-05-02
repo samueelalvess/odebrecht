@@ -20,7 +20,7 @@
           <small>IP: 177.132.139.61</small>
           <h5><strong>PEDIDO DE COMPRA</strong></h5>
           <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12">CÓD. PEDIDO: <label>000047786</label></div>
+              <div class="col-xs-12 col-sm-12 col-md-12">CÓD. PEDIDO: <label>{{$print->JJ20_001_C}}</label></div>
           </div>
           <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12">TIPO DE PEDIDO: <label>VENDAS</label></div>
@@ -182,7 +182,7 @@
     </div>
   </div>
 
- </div> 
+ </div>
 </div>
 
 

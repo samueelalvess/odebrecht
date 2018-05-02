@@ -165,7 +165,7 @@
 
               <div class="col-md-12">
                 <hr>
-                <a href="{{route('checkoutOrder',['id'=>'09D3F95B5D654924A143'])}}"><button id="btn_continuar" disabled class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
+                <a id="link_continuar"><button id="btn_continuar" disabled class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
               </div>
               <div class="col-md-12" id="div_alerta">
                 <span class="pull-right"><small style="color:red">*Informe o cliente e/ou insira um produto para prosseguir com o pedido.</small></span>
