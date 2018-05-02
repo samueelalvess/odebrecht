@@ -80,7 +80,7 @@ class RequestController extends Controller
     public function reportNotBilled(ReportBilled $rpbilled, $status)
     {
       $reportebilled = $rpbilled->getReportNotBilled($status);
-      return view('dashboard.order.notbilledorderslist',['rpbilled'=>$reportebilled]);
+      return view('dashboard.order.notbilledorderslist',compact('status'),['rpbilled'=>$reportebilled]);
     }
 
 }

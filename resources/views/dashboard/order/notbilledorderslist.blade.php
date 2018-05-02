@@ -16,28 +16,27 @@
         <h2>Filtrar por:</h2>
         <div class="clearfix"></div>
       </div>
-
       <div class="col-md-12" align="center">
         <div class="nao-faturado-group" id="nao-faturado-group" data-toggle="buttons">
-        <label class="btn btn-default nao-faturado active libaut">
+        <label class="btn btn-default nao-faturado @if($status == 1) {{'active'}} @endif libaut">
             <input type="radio" name="filtro" id="filtro1">
             <span class="radio-dot"></span>
             <span class="nao-faturado-word">Lib. Automático</span>
         </label>
 
-        <label class="btn btn-default nao-faturado bloq">
+        <label class="btn btn-default nao-faturado bloq @if($status == 2) {{'active'}} @endif">
             <input type="radio" name="filtro" id="filtro2">
             <span class="radio-dot"></span>
             <span class="nao-faturado-word">Bloqueado</span>
         </label>
 
-        <label class="btn btn-default nao-faturado libman">
+        <label class="btn btn-default nao-faturado libman @if($status == 3) {{'active'}} @endif">
             <input type="radio" name="filtro" id="filtro2">
             <span class="radio-dot"></span>
             <span class="nao-faturado-word">Lib. Manual</span>
         </label>
 
-        <label class="btn btn-default nao-faturado rejei">
+        <label class="btn btn-default nao-faturado rejei @if($status == 4) {{'active'}} @endif">
             <input type="radio" name="filtro" id="filtro2">
             <span class="radio-dot"></span>
             <span class="nao-faturado-word">Rejeitado</span>
