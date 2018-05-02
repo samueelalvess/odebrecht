@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
 
               Route::get('/faturados', 'Dashboard\RequestController@reportBilled')->name('billedList');
 
-              Route::get('/naofaturados', 'Dashboard\RequestController@reportNotBilled')->name('notbilledList');
+              Route::get('/{cod}/naofaturados', 'Dashboard\RequestController@reportNotBilled')->name('notbilledList');
 
               Route::get('/{id}/imprimir', 'Dashboard\RequestController@print')->name('printOrder');
 

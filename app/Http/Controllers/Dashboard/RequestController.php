@@ -47,7 +47,8 @@ class RequestController extends Controller
     public function print($ukey) {
       $pe = new \App\Model\Request();
       $print = $pe->getprint($ukey);
-      return view('dashboard.order.printorder', compact('print'));
+      $product = $pe->getPrintProduct('W8-WEB-'.$ukey);
+      return view('dashboard.order.printorder', compact('print'), compact('product'));
     }
 
 
@@ -76,21 +77,10 @@ class RequestController extends Controller
       $reportebilled = $rpbilled->getReportBilled();
       return view('dashboard.order.billedorderslist',['rpbilled'=>$reportebilled]);
     }
-    public function reportNotBilled(ReportBilled $rpbilled)
+    public function reportNotBilled(ReportBilled $rpbilled, $status)
     {
-      $reportebilled = $rpbilled->getReportNotBilled(1);
+      $reportebilled = $rpbilled->getReportNotBilled($status);
       return view('dashboard.order.notbilledorderslist',['rpbilled'=>$reportebilled]);
     }
-<<<<<<< HEAD
-=======
-    public function getPrint($ukey)
-    {
-      $pe = new \App\Model\Request();
-      //W8-WEB-000047717
-      $data = $pe->getPrint($ukey);
-      $dataproduct = $pe->getPrintProduct($ukey);
 
-      return view('',compact('data'),compact('dataproduct'));
-    }
->>>>>>> 9adb91ca3fce71d9d334a779b5e950741bd315f7
 }
