@@ -69,7 +69,7 @@
                   <td>
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">R$</span>
-                      <input type="text" id="valor-{{trim($product->UKEY)}}" class="valorprod form-control" data-symbol="R$ " data-thousands="." data-decimal="," placeholder="0,00">
+                      <input type="text" id="valor-{{trim($product->UKEY)}}" class="valorprod form-control testee" data-symbol="R$ " data-thousands="." data-decimal="," placeholder="0,00">
                     </div>
                   </td>
                   <td>
@@ -180,14 +180,12 @@
 
 @section('javascript')
 
-<script src="{{ asset('dashboard/assets/js/lib/data-table/dataTables.bootstrap.min.js') }}"></script>
-<script src="{{ asset('dashboard/assets/js/lib/data-table/datatables-init.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/lib/notify/bootstrap-notify.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/order/order.js') }}"></script>
 <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js') }}"></script>
-<script src="{{ asset('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
 <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/lib/data-table/jquery.dataTables.min.js') }}"></script>
 <script>
 
 </script>
