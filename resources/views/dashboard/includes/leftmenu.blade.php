@@ -33,7 +33,7 @@
             <ul class="nav child_menu">
               <li><a href="{{route('newOrder')}}">Novo Pedido</a></li>
               <li><a href="{{route('billedList')}}">Pedidos faturados</a></li>
-              <li><a href="{{route('notbilledList')}}">Pedidos não faturados</a></li>
+              <li><a href="{{route('notbilledList', ['id'=>1])}}">Pedidos não faturados</a></li>
             </ul>
           </li>
           <li><a href="{{route('informativeList')}}"><i class="fa fa-info"></i> Informativos </a></li>
@@ -42,7 +42,7 @@
       <div class="menu_section">
         <h3>Perfil</h3>
         <ul class="nav side-menu">
-          <li><a href="{{route('printOrder')}}"><i class="fa fa-user"></i> Meu Perfil </a></li>
+          <li><a href="a"><i class="fa fa-user"></i> Meu Perfil </a></li>
           <li><a href="f"><i class="fa fa-cogs"></i> Configurações </a></li>
         </ul>
       </div>

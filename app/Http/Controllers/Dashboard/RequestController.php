@@ -36,11 +36,19 @@ class RequestController extends Controller
     public function store(Request $request)
     {
       $pe = new \App\Model\Request();
-      if ( $pe->setRequest($request) )
-          return 'sucesso';
+      $insert = $pe->setRequest($request);
+      $ukey = $pe->getNumeric();
+      if ( $insert )
+          return redirect()->route('printOrder', ['id'=>trim($ukey)]);
       else
-          return 'erro';
+          return redirect()->back();
+    }
 
+    public function print($ukey) {
+      $pe = new \App\Model\Request();
+      $print = $pe->getprint($ukey);
+      $product = $pe->getPrintProduct('W8-WEB-'.$ukey);
+      return view('dashboard.order.printorder', compact('print'), compact('product'));
     }
 
 
@@ -69,18 +77,10 @@ class RequestController extends Controller
       $reportebilled = $rpbilled->getReportBilled();
       return view('dashboard.order.billedorderslist',['rpbilled'=>$reportebilled]);
     }
-    public function reportNotBilled(ReportBilled $rpbilled)
+    public function reportNotBilled(ReportBilled $rpbilled, $status)
     {
-      $reportebilled = $rpbilled->getReportNotBilled(1);
-      return view('dashboard.order.notbilledorderslist',['rpbilled'=>$reportebilled]);
+      $reportebilled = $rpbilled->getReportNotBilled($status);
+      return view('dashboard.order.notbilledorderslist',compact('status'),['rpbilled'=>$reportebilled]);
     }
-    public function getPrint($ukey)
-    {
-      $pe = new \App\Model\Request();
-      //W8-WEB-000047717
-      $data = $pe->getPrint($ukey);
-      $dataproduct = $pe->getPrintProduct($ukey);
 
-      return view('',compact('data'),compact('dataproduct'));
-    }
 }

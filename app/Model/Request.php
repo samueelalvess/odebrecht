@@ -32,7 +32,6 @@ class Request extends Model
 
     public function setRequest($data)
     {
-      $ukey = auth()->user()->ukey;
       $valor = $this->getNumeric();
       $valor = trim($valor);
       $valor++;
@@ -74,7 +73,7 @@ class Request extends Model
                                   '09D3F95B5D654924A143',
                                   '".$data->prazopagamento."',
                                   '".$data->tipodocumento."',
-                                  '".$ukey."',
+                                  '".auth()->user()->ukey."',
                                   '".$data->filial."',
                                   '".$data->tipofrete."',
                                   1.00,
@@ -163,7 +162,7 @@ class Request extends Model
     public function getPrint($ukey)
     {
       $data = $this->select('jj20.ukey','JJ20_001_C','JJ20_016_D','T04_002_C','A33_002_C','A10_002_C','A03.A03_002_C','A03.A03_009_C','A03.A03_010_C',
-                            'A03.A03_005_C','A03.A03_006_C','A24.A24_001_C','A23.A23_001_C','A03.A03_012_C','A03.A03_016_C','A03_1.A03_005_C as ENDERECO_ENTREGA','A24_1.A24_001_C as CIDADE_ENTREGA',
+                            'A03.A03_005_C','A03.A03_006_C','A24.A24_001_C','A23.A23_001_C','A03.A03_012_C','A03.A03_016_C','A03_1.A03_005_C as ENDERECO_ENTREGA','A03_1.A03_004_C as BAIRRO_ENTREGA','A24_1.A24_001_C as CIDADE_ENTREGA',
                             'A23_1.A23_001_C as UF_ENTREGA','A06.A06_004_C as CEP_ENTREGA','JJ20.JJ20_003_C','A21_002_C','A13_002_C','JJ20_009_C','JJ20_015_M','JJ20_007_M')
                    ->leftjoin('T04','JJ20.T04_UKEY','=','T04.UKEY')
                    ->leftjoin('A33','JJ20.A33_UKEY','=','A33.UKEY')
@@ -179,7 +178,7 @@ class Request extends Model
                    ->leftjoin('A23 as A23_1','A24_1.A23_UKEY', '=', 'A23_1.UKEY')
                    ->leftjoin('A21','JJ20.A21_UKEY','=','A21.UKEY')
                    ->leftjoin('A13','JJ20.A13_UKEY','=','A13.UKEY')
-                   ->where('jj20.UKEY',$ukey)
+                   ->where('jj20.JJ20_001_C',$ukey)
                    ->first();
       return $data;
 

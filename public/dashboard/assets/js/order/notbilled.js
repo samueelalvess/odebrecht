@@ -32,17 +32,17 @@ $(document).ready(function() {
 } ); // -> DOCUMENT READY
 
 $( ".libaut" ).click(function() {
-  location.reload();
+  window.location.href = "/pedidos/1/naofaturados";
 });
 
 $( ".bloq" ).click(function() {
-  location.reload();
+  window.location.href = "/pedidos/2/naofaturados";
 });
 
 $( ".libman" ).click(function() {
-  location.reload();
+  window.location.href = "/pedidos/3/naofaturados";
 });
 
 $( ".rejei" ).click(function() {
-  location.reload();
+  window.location.href = "/pedidos/4/naofaturados";
 });

@@ -69,7 +69,11 @@
                   <td>
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">R$</span>
+<<<<<<< HEAD
                       <input type="text" id="valor-{{trim($product->UKEY)}}" class="form-control valor" data-symbol="R$ " data-thousands="." data-decimal="," placeholder="0,00">
+=======
+                      <input type="text" id="valor-{{trim($product->UKEY)}}" class="valorprod form-control testee" data-symbol="R$ " data-thousands="." data-decimal="," placeholder="0,00">
+>>>>>>> a02e16ca0a7ae33ac738ee2a26f0c9ffc41f9c0e
                     </div>
                   </td>
                   <td>
@@ -165,7 +169,7 @@
 
               <div class="col-md-12">
                 <hr>
-                <a href="{{route('checkoutOrder',['id'=>'09D3F95B5D654924A143'])}}"><button id="btn_continuar" disabled class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
+                <a id="link_continuar"><button id="btn_continuar" disabled class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
               </div>
               <div class="col-md-12" id="div_alerta">
                 <span class="pull-right"><small style="color:red">*Informe o cliente para prosseguir com o pedido.</small></span>
@@ -180,14 +184,12 @@
 
 @section('javascript')
 
-<script src="{{ asset('dashboard/assets/js/lib/data-table/dataTables.bootstrap.min.js') }}"></script>
-<script src="{{ asset('dashboard/assets/js/lib/data-table/datatables-init.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/lib/notify/bootstrap-notify.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/order/order.js') }}"></script>
 <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js') }}"></script>
-<script src="{{ asset('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
 <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/lib/data-table/jquery.dataTables.min.js') }}"></script>
 <script>
 
 </script>
