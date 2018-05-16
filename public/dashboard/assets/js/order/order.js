@@ -35,11 +35,11 @@ $(document).ready(function() {
 function blockorder() {
   var combocli = $('#combocli').find("option:selected").val();
   var totalorder = $('#totaltxt').text();
-  var ukey = $('#combocli').find("option:selected").val().split(' - ');
+  var ukey = $('#combocli').find("option:selected").attr("ukey");
   if(combocli != '-- Informe o cliente que você deseja realizar o pedido --' && totalorder != '0,00') {
     $("#div_alerta").hide(100);
     $("#btn_continuar").prop( "disabled", false );
-    $("#link_continuar").attr("href", ukey[0]+'/finalizar');
+    $("#link_continuar").attr("href", ukey+'/finalizar');
 
   } else {
     $("#div_alerta").show(100);
@@ -50,13 +50,13 @@ function blockorder() {
 $('.selectpicker').change(function () {
 // cliente selecionado no combo de cliente
 var clientecombo = $(this).find("option:selected").val();
-var ukey = $('#combocli').find("option:selected").val().split(' - ');
+var ukey = $('#combocli').find("option:selected").attr("ukey");
 setCookie('cliente',clientecombo,'1');
 // libera o botão "continuar" ou desabilita
 if(clientecombo != '-- Informe o cliente que você deseja realizar o pedido --') {
   $("#div_alerta").hide(100);
   $("#btn_continuar").prop( "disabled", false );
-  $("#link_continuar").attr("href", ukey[0]+'/finalizar');
+  $("#link_continuar").attr("href", ukey+'/finalizar');
 } else {
   $("#div_alerta").show(100);
   $("#btn_continuar").prop( "disabled", true );

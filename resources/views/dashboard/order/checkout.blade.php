@@ -40,7 +40,7 @@
             <select class="form-control" name="filial">
               <option> -- SELECIONE -- </option>
               @foreach($branch as $br)
-                <option value="{{trim($br->ukey)}}">{{trim($br->a10_002_c)}}</option>
+                <option value="{{trim($br->ukey)}}">{{$br->A10_016_C}} - {{trim($br->a10_002_c)}}</option>
               @endforeach
             </select>
           </div>

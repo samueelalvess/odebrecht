@@ -25,8 +25,8 @@
           <select id="combocli" class="selectpicker form-control" data-live-search="true">
             <option> -- Informe o cliente que você deseja realizar o pedido -- </option>
             @foreach($clients as $client)
-            <?php $clienteblade = $client['UKEY'].' - '.$client['A03_002_C']; ?>
-              <option data-tokens="{{$client->UKEY}} {{$client->A03_002_C}}" <?php if(isset($_COOKIE["cliente"]) && trim($_COOKIE["cliente"]) == trim($clienteblade)) echo 'selected'; ?>>{{$client->UKEY}} - {{$client->A03_002_C}}</option>
+            <?php $clienteblade = $client['A03_002_C']; ?>
+              <option data-tokens="{{$client->A03_002_C}}" ukey="{{$client->UKEY}}" <?php if(isset($_COOKIE["cliente"]) && trim($_COOKIE["cliente"]) == trim($clienteblade)) echo 'selected'; ?>>{{$client->A03_002_C}}</option>
             @endforeach
           </select>
           <hr>
@@ -49,7 +49,7 @@
           <tbody>
             @foreach($products as $product)
                 <tr>
-                  <td data-cod="{{$product->UKEY}}">{{$product->UKEY}}</td>
+                  <td data-cod="{{$product->UKEY}}">{{$product->D04_001_C}}</td>
                   <td data-desc="{{$product->D04_002_C}}">{{$product->D04_002_C}}</td>
                   <td>
                     <div class="input-group">
