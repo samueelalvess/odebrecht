@@ -29,22 +29,9 @@ $(document).ready(function() {
 }
   );
 
-      $('.valorprod').maskMoney();
-      blockorder();
+      $('.valor').maskMoney();
 } ); // -> DOCUMENT READY
-function blockorder() {
-  var combocli = $('#combocli').find("option:selected").val();
-  var totalorder = $('#totaltxt').text();
 
-  if(combocli != '-- Informe o cliente que você deseja realizar o pedido --' && totalorder != '0,00') {
-    $("#div_alerta").hide(100);
-    $("#btn_continuar").prop( "disabled", false );
-
-  } else {
-    $("#div_alerta").show(100);
-    $("#btn_continuar").prop( "disabled", true );
-  }
-}
 $('.selectpicker').change(function () {
 // cliente selecionado no combo de cliente
 var clientecombo = $(this).find("option:selected").val();
@@ -175,7 +162,7 @@ function adiciona(cod, desc, qtd, valor, total) {
    var cookie = getCookie('carrinho');
    item += cookie;
    setCookie('carrinho',item,'1');
-   blockorder();
+
 }
 
 function moedaamericana(valor) {
@@ -233,7 +220,7 @@ function removelinha(obj,cod) {
         timer: 1000
     });
 
-    blockorder();
+
 }
 
 function multiplica(v1,v2)
