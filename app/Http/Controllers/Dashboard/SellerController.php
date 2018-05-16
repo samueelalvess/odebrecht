@@ -69,13 +69,14 @@ class SellerController extends Controller
     }
     public function logout()
     {
+      
       if( Auth::logout() )
         return redirect()->route('logar');
       else
         return redirect()->back();
 
     }
-    
+
 
 
 }

@@ -29,9 +29,10 @@ $(document).ready(function() {
 }
   );
 
-      $('.valorprod').maskMoney();
-      blockorder();
+      $('.valor').maskMoney();
 } ); // -> DOCUMENT READY
+<<<<<<< HEAD
+=======
 function blockorder() {
   var combocli = $('#combocli').find("option:selected").val();
   var totalorder = $('#totaltxt').text();
@@ -46,6 +47,7 @@ function blockorder() {
     $("#btn_continuar").prop( "disabled", true );
   }
 }
+>>>>>>> a02e16ca0a7ae33ac738ee2a26f0c9ffc41f9c0e
 
 $('.selectpicker').change(function () {
 // cliente selecionado no combo de cliente
@@ -179,7 +181,7 @@ function adiciona(cod, desc, qtd, valor, total) {
    var cookie = getCookie('carrinho');
    item += cookie;
    setCookie('carrinho',item,'1');
-   blockorder();
+
 }
 
 function moedaamericana(valor) {
@@ -237,7 +239,7 @@ function removelinha(obj,cod) {
         timer: 1000
     });
 
-    blockorder();
+
 }
 
 function multiplica(v1,v2)

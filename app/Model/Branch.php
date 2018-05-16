@@ -10,7 +10,7 @@ class Branch extends Model
 
     public function getBranchAll()
     {
-      return $this->select('a10_001_c','a10_002_c','ukey')
+      return $this->select('A10_016_C','a10_001_c','a10_002_c','ukey')
                   ->get();
     }
 }
