@@ -48,18 +48,17 @@
                             <tr>
                                 <td>
                                     <p>
-                                        000046688
+                                        {{$print->JJ20_001_C}}
                                     </p>
                                 </td>
                                 <td>
                                     <p>
-                                        VENDAS
+                                        {{$print->T04_002_C}}
                                     </p>
                                 </td>
                                 <td>
                                     <p>
-                                        [0002-00] ODEBRECHT COMÉRCIO E
-                                        INDUSTRIA DE CAFÉ LTDA
+                                        {{$print->A10_016_C}} - {{$print->A10_002_C}}
                                     </p>
                                 </td>
                             </tr>
@@ -73,7 +72,7 @@
                             <tr>
                                 <td>
                                     <p>
-                                        FERREIRA E INACIO REP. COMERCIAIS LTDA
+                                        {{$print->A33_002_C}}
                                     </p>
                                 </td>
                             </tr>
@@ -88,63 +87,56 @@
                             <tr>
                                 <td colspan="2">
                                     <p>
-                                        EMPRESA: PLANOS SUPERMERCADO LTDA -
-                                        LOJA 2
+                                        EMPRESA: {{$print->A03_002_C}}
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td width="50%">
                                     <p>
-                                        CNPJ: 12857831000244
+                                        CNPJ: {{$print->A03_009_C}}
                                     </p>
                                 </td>
                                 <td width="50%">
                                     <p>
-                                        INSC. EST.:
-                                        <a
-                                            href="tel:%28906%29%20982-5106"
-                                            target="_blank"
-                                        >
-                                            9069825106
-                                        </a>
+                                        INSC. EST.: {{$print->A03_010_C}}
+
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td width="50%">
                                     <p>
-                                        ENDEREÇO: AV. GABRIEL FRECEIRO DE
-                                        MIRANDA
+                                        ENDEREÇO: {{$print->A03_005_C}}
                                     </p>
                                 </td>
                                 <td width="50%">
                                     <p>
-                                        CEP:
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="50%">
-                                    <p>
-                                        CIDADE: CAMBE
-                                    </p>
-                                </td>
-                                <td width="50%">
-                                    <p>
-                                        ESTADO:
+                                        CEP: {{$print->A03_006_C}}<
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td width="50%">
                                     <p>
-                                        TELEFONE: 4330621188
+                                        CIDADE: {{$print->A24_001_C}}
                                     </p>
                                 </td>
                                 <td width="50%">
                                     <p>
-                                        CONTATO:
+                                        ESTADO: {{$print->A23_001_C}}
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%">
+                                    <p>
+                                        TELEFONE: {{$print->A03_012_C}}
+                                    </p>
+                                </td>
+                                <td width="50%">
+                                    <p>
+                                        CONTATO: {{$print->A03_016_C}}
                                     </p>
                                 </td>
                             </tr>
@@ -158,31 +150,31 @@
                             <tr>
                                 <td colspan="2">
                                     <p>
-                                        ENDEREÇO:
+                                        ENDEREÇO: {{$print->ENDERECO_ENTREGA}}
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <p>
-                                        CEP:
+                                        CEP: {{$print->CEP_ENTREGA}}
                                     </p>
                                 </td>
                                 <td>
                                     <p>
-                                        BAIRRO:
+                                        BAIRRO: {{$print->BAIRRO_ENTREGA}}
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <p>
-                                        CIDADE:
+                                        CIDADE: {{$print->CIDADE_ENTREGA}}
                                     </p>
                                 </td>
                                 <td>
                                     <p>
-                                        UF:
+                                        UF: {{$print->UF_ENTREGA}}
                                     </p>
                                 </td>
                             </tr>
@@ -200,7 +192,7 @@
                             <tr>
                                 <td width="25%">
                                     <p>
-                                        ENDEREÇO:
+                                        ENDEREÇO: {{$print->ENDERECO_ENTREGA}}
                                     </p>
                                 </td>
                                 <td>
@@ -209,7 +201,7 @@
                             <tr>
                                 <td width="25%">
                                     <p>
-                                        BAIRRO:
+                                        BAIRRO: {{$print->BAIRRO_ENTREGA}}
                                     </p>
                                 </td>
                                 <td>
@@ -218,19 +210,19 @@
                             <tr>
                                 <td width="25%">
                                     <p>
-                                        CIDADE/UF:
+                                        CIDADE/UF: {{$print->CIDADE_ENTREGA}} / {{$print->UF_ENTREGA}}
                                     </p>
                                 </td>
                                 <td>
                                     <p>
-                                        /
+
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td width="25%">
                                     <p>
-                                        CEP:
+                                        CEP: {{$print->CEP_ENTREGA}}
                                     </p>
                                 </td>
                                 <td>
@@ -263,17 +255,17 @@
                             <tr>
                                 <td>
                                     <p>
-                                        CIF
+                                        {{$print->JJ20_003_C}}
                                     </p>
                                 </td>
                                 <td>
                                     <p>
-                                        Boleto
+                                        {{$print->A21_002_C}}
                                     </p>
                                 </td>
                                 <td>
                                     <p>
-                                        28 e 35 dias
+                                        {{$print->A13_002_C}}
                                     </p>
                                 </td>
                             </tr>
@@ -303,12 +295,14 @@
                             </tr>
                             <tr>
                                 <td width="33%">
+                                  <p>{{$print->JJ20_009_C}}</p>
                                 </td>
                                 <td width="33%">
+                                  <p>{{$print->JJ20_015_M}}</p>
                                 </td>
                                 <td width="33%">
                                     <p>
-                                        imediato
+                                        {{$print->JJ20_007_M}}
                                     </p>
                                 </td>
                             </tr>
@@ -349,132 +343,29 @@
                                     </p>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <p>
-                                        000532P
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>
-                                        CAFE ODEBRECHT BAG EXTRA FORTE 500G
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        100
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        R$ 6,00
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        R$ 600,00
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>
-                                        000236
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>
-                                        FILTRO PERMANENTE 103
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        100
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        R$ 1,69
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        R$ 169,00
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>
-                                        000053
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>
-                                        CAFE SOLUVEL ODEBRECHT SACHET 24X50 GR
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        24
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        R$ 1,89
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        R$ 45,36
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>
-                                        000191P
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>
-                                        CAFE ODEBRECHT GOLDEN ALTO VACUO 500G
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        100
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        R$ 6,00
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        R$ 600,00
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                </td>
-                                <td>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        <strong>TOTAL</strong>
-                                    </p>
-                                </td>
-                                <td>
-                                    <p align="right">
-                                        R$ 1.414,36
-                                    </p>
-                                </td>
-                            </tr>
+                            <?php $total = 0; ?>
+                            @foreach($product as $prod)
+                              <tr>
+                                  <td>{{$prod->D04_001_C}}</td>
+                                  <td>{{$prod->D04_002_C}}</td>
+                                  <td class="text-right">{{$prod->JJ21_001_B}}</td>
+                                  <td class="text-right">R$ {{number_format($prod->JJ21_002_B,2,',','.')}}</td>
+                                  <td class="text-right">R$ {{number_format($prod->JJ21_003_B,2,',','.')}}</td>
+                              </tr>
+                              <?php
+
+                              $total += $prod->JJ21_003_B;
+
+                               ?>
+                            @endforeach
+                            <tfoot>
+                                <tr>
+                                    <th colspan="4" class="text-right"><strong>TOTAL</strong></th>
+                                    <th class="text-right">
+                                        R$ <?php echo number_format($total,2,',','.'); ?>
+                                    </th>
+                                </tr>
+                            </tfoot>
                         </tbody>
                     </table>
                 </td>

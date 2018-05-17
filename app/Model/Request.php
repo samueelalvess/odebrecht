@@ -30,7 +30,7 @@ class Request extends Model
                           ];
     public $timestamps = false;
 
-    public function setRequest($data,$cliente)
+    public function setRequest($data)
     {
       $valor = $this->getNumeric();
       $valor = trim($valor);
@@ -70,7 +70,7 @@ class Request extends Model
                                             )
                         values (
                                   '".$valor."' ,
-                                  '".$cliente."',
+                                  '".$data->ukey."',
                                   '".$data->prazopagamento."',
                                   '".$data->tipodocumento."',
                                   '".auth()->user()->ukey."',

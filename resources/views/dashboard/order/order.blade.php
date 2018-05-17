@@ -22,7 +22,7 @@
       <div class="x_content">
 
         <h2>Cliente</h2>
-        <select class="selectpicker form-control" data-live-search="true">
+        <select class="selectpicker form-control" data-live-search="true" id="combocli">
           <option> -- Informe o cliente que você deseja realizar o pedido -- </option>
           @foreach($clients as $client)
           <?php $clienteblade = $client['A03_002_C']; ?>

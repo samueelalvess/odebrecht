@@ -35,10 +35,10 @@ class RequestController extends Controller
       return view('dashboard.order.order',compact('clients'),compact('products'));
     }
 
-    public function store(Request $request,$cliente)
+    public function store(Request $request)
     {
       $pe = new \App\Model\Request();
-      $insert = $pe->setRequest($request,$cliente);
+      $insert = $pe->setRequest($request);
       $ukey = $pe->getNumeric();
 
       $print = $pe->getprint($ukey);
