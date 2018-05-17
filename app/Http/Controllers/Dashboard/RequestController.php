@@ -12,6 +12,8 @@ use App\Model\Payment;
 use App\Model\Billed;
 use App\Model\ReportBilled;
 use Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PedidoEmail;
 
 class RequestController extends Controller
 {
@@ -33,15 +35,21 @@ class RequestController extends Controller
       return view('dashboard.order.order',compact('clients'),compact('products'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request,$cliente)
     {
       $pe = new \App\Model\Request();
-      $insert = $pe->setRequest($request);
+      $insert = $pe->setRequest($request,$cliente);
       $ukey = $pe->getNumeric();
-      if ( $insert )
+
+      $print = $pe->getprint($ukey);
+      $product = $pe->getPrintProduct('W8-WEB-'.trim($ukey));
+
+      if ( $insert ){
+          Mail::to(['mayron@w8tecnologia.com.br','samuel@w8tecnologia.com.br'])->send(new PedidoEmail($print,$product));
           return redirect()->route('printOrder', ['id'=>trim($ukey)]);
-      else
+      }else{
           return redirect()->back();
+        }
     }
 
     public function print($ukey) {

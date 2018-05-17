@@ -17,4 +17,5 @@ class LoginEmail extends Mailable
                   ->subject('SITE LOGIN')
                   ->from('w8tecnologia.drive@gmail.com','ODEBRECHT');
     }
+
 }
