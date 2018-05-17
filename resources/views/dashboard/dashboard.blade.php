@@ -59,12 +59,14 @@
               <thead>
                 <th><small>Pedidos</small></th>
                 <th>Nome</th>
+                <th>Valor</th>
               </thead>
               <tbody>
                 @foreach($topclient as $client)
                   <tr>
-                    <td>{{$client->Total}}</td>
-                    <td>{{trim($client->A03_002_C)}}</td>
+                    <td>{{$client->NCOMPRAS}}</td>
+                    <td>{{trim($client->CLIENTE)}}</td>
+                    <td>{{trim($client->VALOR)}}</td>
                   </tr>
                 @endforeach
 

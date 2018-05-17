@@ -82,6 +82,33 @@ class Client extends Model
                                         ) as topcliente on topcliente.ukey = A03.UKEY");
        return $valor;
     }
+    public function getClientTop()
+    {
+
+      $valor = \DB::select("SELECT
+                                	TOP 10
+                                	A03_003_C AS CLIENTE,
+                                	COUNT(A03_003_C) AS NCOMPRAS,
+                                	SUM(B01_001_B) AS VALOR
+                                FROM
+                                	J10
+                                	INNER JOIN B01 ON B01.B01_UKEYP = J10.UKEY AND B01_002_N = 2
+                                	INNER JOIN T04 ON T04.UKEY = J10.T04_UKEY
+                                	INNER JOIN A03 ON A03.UKEY = J10.A03_UKEY
+                                	INNER JOIN A33 ON A33.UKEY = J10.A33_UKEY
+                                WHERE
+                                	J10.J10_002_N = 0  AND
+                                	T04.T04_004_N = 1  AND
+                                	A33.UKEY = '".auth()->user()->ukey."'  AND
+                                	J10_003_D >= '".date('Y')."0101'
+                                GROUP BY
+                                	A03_003_C
+                                ORDER BY
+                                	SUM(B01_001_B) DESC");
+
+      return $valor;
+
+    }
 
 
 }
