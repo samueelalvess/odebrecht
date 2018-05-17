@@ -163,7 +163,7 @@ class Request extends Model
     {
       $data = $this->select('jj20.ukey','JJ20_001_C','JJ20_016_D','T04_002_C','A33_002_C','A10_002_C','A03.A03_002_C','A03.A03_009_C','A03.A03_010_C',
                             'A03.A03_005_C','A03.A03_006_C','A24.A24_001_C','A23.A23_001_C','A03.A03_012_C','A03.A03_016_C','A03_1.A03_005_C as ENDERECO_ENTREGA','A03_1.A03_004_C as BAIRRO_ENTREGA','A24_1.A24_001_C as CIDADE_ENTREGA',
-                            'A23_1.A23_001_C as UF_ENTREGA','A06.A06_004_C as CEP_ENTREGA','JJ20.JJ20_003_C','A21_002_C','A13_002_C','JJ20_009_C','JJ20_015_M','JJ20_007_M')
+                            'A23_1.A23_001_C as UF_ENTREGA','A06.A06_004_C as CEP_ENTREGA','JJ20.JJ20_003_C','A21_002_C','A13_002_C','JJ20_009_C','JJ20_015_M','JJ20_007_M','A10_016_C')
                    ->leftjoin('T04','JJ20.T04_UKEY','=','T04.UKEY')
                    ->leftjoin('A33','JJ20.A33_UKEY','=','A33.UKEY')
                    ->leftJoin('A10','JJ20.CIA_UKEY','=','A10.UKEY')

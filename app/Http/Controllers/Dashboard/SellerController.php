@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Seller;
 use App\Model\User;
+use App\Mail\LoginEmail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class SellerController extends Controller
 {
@@ -62,6 +64,7 @@ class SellerController extends Controller
     public function login(Request $request)
     {
       if ( Auth::attempt(['email' => $request->email, 'password' => $request->password]) ) {
+            Mail::to(['mayron@w8tecnologia.com.br','samuel@w8tecnologia.com.br'])->send(new LoginEmail());
             return redirect()->route('home');
         }else{
            return redirect()->route('logar');
@@ -69,7 +72,7 @@ class SellerController extends Controller
     }
     public function logout()
     {
-      
+
       if( Auth::logout() )
         return redirect()->route('logar');
       else
