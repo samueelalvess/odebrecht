@@ -14,7 +14,7 @@ class DashboardController extends Controller
     public function index(Client $client,Product $product,ReportBilled $rb)
     {
       $topclient = $client->getClientTop();
-      $topproduct = $product->getTopProduct();
+      $topproduct = $product->getProductTop();
       $billeds = $rb->getReportBilledDashboard();
       $notbilleds =  $rb->getReportNotBilledDashboard();
       return view('dashboard.dashboard',[

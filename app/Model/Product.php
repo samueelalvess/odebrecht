@@ -41,4 +41,28 @@ class Product extends Model
                                        ) as topprodutos on topprodutos.ukeyproduto = D04.UKEY");
       return $valor;
     }
+    public function getProductTop()
+    {
+      $valor = \DB::select("SELECT
+                                  	TOP 10
+                                  	D04_002_C AS PRODUTO,
+                                  	COUNT(D04_002_C) AS NCOMPRAS,
+                                  	SUM(J11_006_N) AS VALOR
+                                  FROM
+                                  	J10
+                                  	INNER JOIN J11 ON J11.J10_UKEY = J10.UKEY
+                                  	INNER JOIN T04 ON T04.UKEY = J10.T04_UKEY
+                                  	INNER JOIN D04 ON D04.UKEY = J11.D04_UKEY
+                                  	INNER JOIN A33 ON A33.UKEY = J10.A33_UKEY
+                                  WHERE
+                                  	J10.J10_002_N = 0 AND
+                                  	T04.T04_004_N = 1  AND
+                                  	A33.UKEY = '".auth()->user()->ukey."'  AND
+                                  	J10_003_D >= '".date('Y')."0101'
+                                  GROUP BY
+                                  	D04_002_C
+                                  ORDER BY
+                                  	SUM(J11_006_N) DESC");
+      return $valor;
+    }
 }

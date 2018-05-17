@@ -93,12 +93,14 @@
               <thead>
                 <th><small>Vendas</small></th>
                 <th>Descrição</th>
+                <th>Valor</th>
               </thead>
               <tbody>
                 @foreach($topproduct as $product)
                     <tr>
-                      <td>{{$product->Total}}</td>
-                      <td>{{trim($product->D04_002_C)}}</td>
+                      <td>{{$product->NCOMPRAS}}</td>
+                      <td>{{trim($product->PRODUTO)}}</td>
+                      <td>{{trim($product->VALOR)}}</td>
                     </tr>
                 @endforeach
 
