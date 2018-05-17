@@ -21,15 +21,15 @@
 
       <div class="x_content">
 
-          <h2>Cliente</h2>
-          <select class="selectpicker form-control" data-live-search="true">
-            <option> -- Informe o cliente que você deseja realizar o pedido -- </option>
-            @foreach($clients as $client)
-            <?php $clienteblade = $client['A03_002_C']; ?>
-              <option data-tokens="{{$client->A03_002_C}}" ukey="{{$client->UKEY}}" <?php if(isset($_COOKIE["cliente"]) && trim($_COOKIE["cliente"]) == trim($clienteblade)) echo 'selected'; ?>>{{$client->A03_002_C}}</option>
-            @endforeach
-          </select>
-          <hr>
+        <h2>Cliente</h2>
+        <select class="selectpicker form-control" data-live-search="true">
+          <option> -- Informe o cliente que você deseja realizar o pedido -- </option>
+          @foreach($clients as $client)
+          <?php $clienteblade = $client['A03_002_C']; ?>
+            <option data-tokens="{{$client->A03_002_C}}" ukey="{{$client->UKEY}}" <?php if(isset($_COOKIE["cliente"]) && trim($_COOKIE["cliente"]) == trim($clienteblade)) echo 'selected'; ?>>{{$client->A03_002_C}}</option>
+          @endforeach
+        </select>
+        <hr>
 
         <div class="x_title">
           <h2><i class="fa fa-coffe"></i> Produtos</h2>
@@ -49,7 +49,7 @@
           <tbody>
             @foreach($products as $product)
                 <tr>
-                  <td data-cod="{{$product->UKEY}}">{{$product->D04_001_C}}</td>
+                  <td data-cod="{{$product->D04_001_C}}">{{$product->D04_001_C}}</td>
                   <td data-desc="{{$product->D04_002_C}}">{{$product->D04_002_C}}</td>
                   <td>
                     <div class="input-group">
@@ -58,7 +58,7 @@
                                 <span class="glyphicon glyphicon-minus"></span>
                             </button>
                         </span>
-                            <input type="text" id="qtd-{{trim($product->UKEY)}}" name="quant[{{$product->D04_001_C}}]" class="form-control input-number" value="1" min="1" max="99999999">
+                            <input type="text" id="qtd-{{trim($product->D04_001_C)}}" name="quant[{{$product->D04_001_C}}]" class="form-control input-number" value="1" min="1" max="99999999">
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[{{$product->D04_001_C}}]">
                                 <span class="glyphicon glyphicon-plus"></span>
@@ -69,11 +69,8 @@
                   <td>
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">R$</span>
-<<<<<<< HEAD
-                      <input type="text" id="valor-{{trim($product->UKEY)}}" class="form-control valor" data-symbol="R$ " data-thousands="." data-decimal="," placeholder="0,00">
-=======
-                      <input type="text" id="valor-{{trim($product->UKEY)}}" class="valorprod form-control testee" data-symbol="R$ " data-thousands="." data-decimal="," placeholder="0,00">
->>>>>>> a02e16ca0a7ae33ac738ee2a26f0c9ffc41f9c0e
+                      <input type="text" id="valor-{{trim($product->D04_001_C)}}" name="valorproduto" class="valorprod form-control" data-symbol="R$ " data-thousands="." data-decimal="," placeholder="0,00000">
+
                     </div>
                   </td>
                   <td>
@@ -158,7 +155,7 @@
             <tr>
                 <th colspan="4" class="text-right"><strong><h4>TOTAL</h4></strong></th>
                 <th class="text-center">
-                    <h4>R$ <span id="totaltxt"> <?php if (isset($_COOKIE["carrinho"])) { echo number_format($total,2,',','.'); } else { echo '0,00'; } ?> </span></h4>
+                    <h4>R$ <span id="totaltxt"><?php if(isset($_COOKIE["carrinho"])){echo number_format($total,2,',','.');}else{echo'0,00';}?></span></h4>
                 </th>
             </tr>
           </tfoot>
@@ -172,7 +169,7 @@
                 <a id="link_continuar"><button id="btn_continuar" disabled class="btn btn-info pull-right" style="border-radius:0px;"><i class="fa fa-arrow-right"></i> Continuar</button></a>
               </div>
               <div class="col-md-12" id="div_alerta">
-                <span class="pull-right"><small style="color:red">*Informe o cliente para prosseguir com o pedido.</small></span>
+                <span class="pull-right"><small style="color:red">*Informe o cliente e/ou insira um produto para prosseguir com o pedido.</small></span>
               </div>
 
     </div>
@@ -183,7 +180,16 @@
 @endsection
 
 @section('javascript')
-
+<script>
+$(function() {
+  $('.valorprod').maskMoney({
+        precision: 5,
+        allowZero:true,
+        keepZeroOnFocus: true,
+        autoLoad: true
+});
+  });
+</script>
 <script src="{{ asset('dashboard/assets/js/lib/notify/bootstrap-notify.js') }}"></script>
 <script src="{{ asset('dashboard/assets/js/order/order.js') }}"></script>
 <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js') }}"></script>

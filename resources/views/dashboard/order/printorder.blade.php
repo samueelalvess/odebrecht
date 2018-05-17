@@ -38,7 +38,7 @@
 
           <h5><strong>EFETUADO PELA FILIAL</strong></h5>
           <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12">EFETUADO PELA FILIAL: <label>{{$print->A10_002_C}}</label></div>
+              <div class="col-xs-12 col-sm-12 col-md-12">EFETUADO PELA FILIAL: <label>{{$print->A10_016_C}} - {{$print->A10_002_C}}</label></div>
           </div>
           <h5><strong>DADOS PARA O FATURAMENTO</strong></h5>
           <div class="row">
