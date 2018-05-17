@@ -11,6 +11,7 @@
 @section('content')
 <form action="{{route('finalizarTESTE')}}" method="post">
   {{ csrf_field() }}
+  <input type="hidden" name="ukey" value="{{$clientbilled->UKEY}}">
 <div class="row">
   <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
@@ -24,7 +25,7 @@
                   </div>
                   <div class="col-md-6">
                       <strong>Nome</strong> {{$clientbilled->EMPRESA}}<br>
-                      <strong>E-mail</strong> ATENDIMENTO@W8TECNOLOGIA.COM.BR<br>
+                      <strong>E-mail</strong> {{$clientbilled->EMAIL}}<br>
                       <strong>Telefone</strong> {{$clientbilled->TELEFONE}}
                   </div>
                   <div class="col-md-4"></div>

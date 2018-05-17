@@ -36,6 +36,7 @@ function blockorder() {
   var combocli = $('#combocli').find("option:selected").val();
   var totalorder = $('#totaltxt').text();
   var ukey = $('#combocli').find("option:selected").attr("ukey");
+  alert(ukey);
   if(combocli != '-- Informe o cliente que você deseja realizar o pedido --' && totalorder != '0,00') {
     $("#div_alerta").hide(100);
     $("#btn_continuar").prop( "disabled", false );

@@ -44,6 +44,8 @@ class Client extends Model
     {
       $client = $this->select(
                           	'A03.A03_003_C AS EMPRESA',
+                            'A03.UKEY AS UKEY',
+                            'A03.A03_017_C AS EMAIL',
                           	'A03.A03_009_C AS CNPJ_CPF',
                           	'A03.A03_010_C AS INSCRICAO_RG',
                           	'A03.A03_021_C as NUMERO',

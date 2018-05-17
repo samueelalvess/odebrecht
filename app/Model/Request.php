@@ -70,7 +70,7 @@ class Request extends Model
                                             )
                         values (
                                   '".$valor."' ,
-                                  '09D3F95B5D654924A143',
+                                  '".$data->ukey."',
                                   '".$data->prazopagamento."',
                                   '".$data->tipodocumento."',
                                   '".auth()->user()->ukey."',
